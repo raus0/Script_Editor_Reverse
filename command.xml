@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+
+  <node>
+    <ID>00</ID>
+    <Name>nop</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>01</ID>
+    <Name>nop1</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>02</ID>
+    <Name>end</Name>
+    <Type>.endm</Type>
+  </node>
+
+  <node>
+    <ID>03</ID>
+    <Name>return</Name>
+    <Type>.endm</Type>
+  </node>
+
+  <node>
+    <ID>04</ID>
+    <Name>call</Name>
+    <Type>.word.branch</Type>
+  </node>
+
+  <node>
+    <ID>05</ID>
+    <Name>goto</Name>
+    <Type>.word.branch</Type>
+  </node>
+
+  <node>
+    <ID>06</ID>
+    <Name>if</Name>
+    <Type>.byte.word.branch</Type>
+  </node>
+
+  <node>
+    <ID>07</ID>
+    <Name>ifcall</Name>
+    <Type>.byte.word.branch</Type>
+  </node>
+
+  <node>
+    <ID>08</ID>
+    <Name>gotostd</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>09</ID>
+    <Name>callstd</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>0A</ID>
+    <Name>gotostdif</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>0B</ID>
+    <Name>callstdif</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>0C</ID>
+    <Name>jumpram</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>0D</ID>
+    <Name>killscript</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>0E</ID>
+    <Name>setbyte</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>0F</ID>
+    <Name>loadpointer</Name>
+    <Type>.byte.word.msg</Type>
+  </node>
+
+  <node>
+    <ID>10</ID>
+    <Name>loadbyte</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>11</ID>
+    <Name>writebyte</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>12</ID>
+    <Name>loadfarbyte</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>13</ID>
+    <Name>setfarbyte</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>14</ID>
+    <Name>copybank</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>15</ID>
+    <Name>copybyte</Name>
+    <Type>.wordx2</Type>
+  </node>
+
+  <node>
+    <ID>16</ID>
+    <Name>setvar</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>17</ID>
+    <Name>addvar</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>18</ID>
+    <Name>subvar</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>19</ID>
+    <Name>copyvar</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>1A</ID>
+    <Name>setvarifnotzero</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>1B</ID>
+    <Name>cmpbanks</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>1C</ID>
+    <Name>cmpbank</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>1D</ID>
+    <Name>cmpbankfarbyte</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>1E</ID>
+    <Name>cmpfarbytebank</Name>
+    <Type>.word.byte</Type>
+  </node>
+
+  <node>
+    <ID>1F</ID>
+    <Name>cmpfarbyte</Name>
+    <Type>.word.byte</Type>
+  </node>
+
+  <node>
+    <ID>20</ID>
+    <Name>cmpbyte</Name>
+    <Type>.wordx2</Type>
+  </node>
+
+  <node>
+    <ID>21</ID>
+    <Name>cmpvar</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>22</ID>
+    <Name>cmpvars</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>23</ID>
+    <Name>callasm</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>24</ID>
+    <Name>callasm2</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>25</ID>
+    <Name>special</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>26</ID>
+    <Name>special2</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>27</ID>
+    <Name>waitstate</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>28</ID>
+    <Name>wait</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>29</ID>
+    <Name>setflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>2A</ID>
+    <Name>clearflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>2B</ID>
+    <Name>checkflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>2C</ID>
+    <Name>cmd2C</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>2D</ID>
+    <Name>cmd2D</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>2E</ID>
+    <Name>resetvars</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>2F</ID>
+    <Name>sound</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>30</ID>
+    <Name>soundwait</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>31</ID>
+    <Name>fanfare</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>32</ID>
+    <Name>fanfarewait</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>33</ID>
+    <Name>music</Name>
+    <Type>.hword.byte</Type>
+  </node>
+
+  <node>
+    <ID>34</ID>
+    <Name>music2</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>35</ID>
+    <Name>defaultmusic</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>36</ID>
+    <Name>fademusic</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>37</ID>
+    <Name>fadeout</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>38</ID>
+    <Name>fadein</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>39</ID>
+    <Name>warp</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>3A</ID>
+    <Name>warpmute</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>3B</ID>
+    <Name>warpdoor</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>3C</ID>
+    <Name>warphole</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>3D</ID>
+    <Name>warppanel</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>3E</ID>
+    <Name>warpbattle</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>3F</ID>
+    <Name>setwarp</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>40</ID>
+    <Name>warp4</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>41</ID>
+    <Name>warp5</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>42</ID>
+    <Name>getplayerpos</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>43</ID>
+    <Name>countpokemon</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>44</ID>
+    <Name>additem</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>45</ID>
+    <Name>removeitem</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>46</ID>
+    <Name>checkitemroom</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>47</ID>
+    <Name>checkitem</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>48</ID>
+    <Name>checkitemtype</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>49</ID>
+    <Name>addpcitem</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>4A</ID>
+    <Name>checkpcitem</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>4B</ID>
+    <Name>adddecoration</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>4C</ID>
+    <Name>removedecoration</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>4D</ID>
+    <Name>testdecoration</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>4E</ID>
+    <Name>checkdecoration</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>4F</ID>
+    <Name>applymovement</Name>
+    <Type>.hword.word</Type>
+  </node>
+
+  <node>
+    <ID>50</ID>
+    <Name>applymovementpos</Name>
+    <Type>.hword.word.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>51</ID>
+    <Name>waitmovement</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>52</ID>
+    <Name>waitmovementpos</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>53</ID>
+    <Name>deleteobject</Name>
+    <ID>53</ID>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>54</ID>
+    <Name>deleteobjectpos</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>55</ID>
+    <Name>showobject</Name>
+    <ID>53</ID>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>56</ID>
+    <Name>showobjectpos</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>57</ID>
+    <Name>moveobject</Name>
+    <Type>.hwordx3</Type>
+  </node>
+
+  <node>
+    <ID>58</ID>
+    <Name>visible</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>59</ID>
+    <Name>invisible</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>5A</ID>
+    <Name>faceplayer</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>5B</ID>
+    <Name>changeface</Name>
+    <Type>.hword.byte</Type>
+  </node>
+
+  <node>
+    <ID>5C</ID>
+    <Name>trainer</Name>
+    <Type>.byte.hwordx2.word(.wordx3)</Type>
+  </node>
+
+  <node>
+    <ID>5D</ID>
+    <Name>repeattrainer</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>5E</ID>
+    <Name>endtrainer</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>5F</ID>
+    <Name>endtrainer2</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>60</ID>
+    <Name>cmptrainer</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>61</ID>
+    <Name>settrainer</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>62</ID>
+    <Name>cleartrainer</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>63</ID>
+    <Name>moveobject</Name>
+    <Type>.hwordx3</Type>
+  </node>
+
+  <node>
+    <ID>64</ID>
+    <Name>moveobjectcurrentpos</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>65</ID>
+    <Name>objectaction</Name>
+    <Type>.hword.byte</Type>
+  </node>
+
+  <node>
+    <ID>66</ID>
+    <Name>waitmsg</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>67</ID>
+    <Name>msg</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>68</ID>
+    <Name>closemsg</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>69</ID>
+    <Name>lockall</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>6A</ID>
+    <Name>lock</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>6B</ID>
+    <Name>releaseall</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>6C</ID>
+    <Name>release</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>6D</ID>
+    <Name>waitkey</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>6E</ID>
+    <Name>yesnobox</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>6F</ID>
+    <Name>multichoice</Name>
+    <Type>.bytex4</Type>
+  </node>
+
+  <node>
+    <ID>70</ID>
+    <Name>multichoice2</Name>
+    <Type>.bytex5</Type>
+  </node>
+
+  <node>
+    <ID>71</ID>
+    <Name>multichoice3</Name>
+    <Type>.bytex5</Type>
+  </node>
+
+  <node>
+    <ID>72</ID>
+    <Name>showwindow</Name>
+    <Type>.bytex4</Type>
+  </node>
+
+  <node>
+    <ID>73</ID>
+    <Name>deletewindow</Name>
+    <Type>.bytex4</Type>
+  </node>
+
+  <node>
+    <ID>74</ID>
+    <Name>multichoice4</Name>
+    <Type>.bytex4</Type>
+  </node>
+
+  <node>
+    <ID>75</ID>
+    <Name>showpokemon</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>76</ID>
+    <Name>hidepokemon</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>77</ID>
+    <Name>showcontestwinner</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>78</ID>
+    <Name>braille</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>79</ID>
+    <Name>givepokemon</Name>
+    <Type>.hword.byte.hword.wordx2.byte</Type>
+  </node>
+
+  <node>
+    <ID>7A</ID>
+    <Name>giveegg</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>7B</ID>
+    <Name>changeattack</Name>
+    <Type>.bytex2.hword</Type>
+  </node>
+
+  <node>
+    <ID>7C</ID>
+    <Name>checkattack</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>7D</ID>
+    <Name>bufferpokemon</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>7E</ID>
+    <Name>bufferfirst</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>7F</ID>
+    <Name>buffernickname</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>80</ID>
+    <Name>bufferitem</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>81</ID>
+    <Name>bufferdecoration</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>82</ID>
+    <Name>bufferattack</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>83</ID>
+    <Name>buffernumber</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>84</ID>
+    <Name>bufferstd</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>85</ID>
+    <Name>bufferstring</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>86</ID>
+    <Name>mart</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>87</ID>
+    <Name>mart2</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>88</ID>
+    <Name>mart3</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>89</ID>
+    <Name>slot</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>8A</ID>
+    <Name>cmd8A</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>8B</ID>
+    <Name>choosecontestpkmn</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>8C</ID>
+    <Name>startcontest</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>8D</ID>
+    <Name>showcontestresults</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>8E</ID>
+    <Name>cmd8E</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>8F</ID>
+    <Name>random</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>90</ID>
+    <Name>addmoney</Name>
+    <Type>.word.byte</Type>
+  </node>
+
+  <node>
+    <ID>91</ID>
+    <Name>submoney</Name>
+    <Type>.word.byte</Type>
+  </node>
+
+  <node>
+    <ID>92</ID>
+    <Name>checkmoney</Name>
+    <Type>.word.byte</Type>
+  </node>
+
+  <node>
+    <ID>93</ID>
+    <Name>showmoney</Name>
+    <Type>.bytex3</Type>
+  </node>
+
+  <node>
+    <ID>94</ID>
+    <Name>hidemoney</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>95</ID>
+    <Name>updatemoney</Name>
+    <Type>.bytex3</Type>
+  </node>
+
+  <node>
+    <ID>96</ID>
+    <Name>cmd96</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>97</ID>
+    <Name>fadescreen</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>98</ID>
+    <Name>fadescreen2</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>99</ID>
+    <Name>dark</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>9A</ID>
+    <Name>light</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>9B</ID>
+    <Name>msg2</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>9C</ID>
+    <Name>playanimation</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>9D</ID>
+    <Name>setanimation</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>9E</ID>
+    <Name>waitanimation</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>9F</ID>
+    <Name>sethealing</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>A0</ID>
+    <Name>checkgender</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>A1</ID>
+    <Name>cry</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>A2</ID>
+    <Name>setmaptile</Name>
+    <Type>.hwordx4</Type>
+  </node>
+
+  <node>
+    <ID>A3</ID>
+    <Name>resetweather</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>A4</ID>
+    <Name>setweather</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>A5</ID>
+    <Name>doweather</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>A6</ID>
+    <Name>settileaction</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>A7</ID>
+    <Name>setmapfooter</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>A8</ID>
+    <Name>lockcurrentlayer</Name>
+    <Type>.hword.bytex3</Type>
+  </node>
+
+  <node>
+    <ID>A9</ID>
+    <Name>releasecurrentlayer</Name>
+    <Type>.hword.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>AA</ID>
+    <Name>backobject</Name>
+    <Type>.bytex2.hwordx2.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>AB</ID>
+    <Name>facebackobject</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>AC</ID>
+    <Name>opendoor</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>AD</ID>
+    <Name>closedoor</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>AE</ID>
+    <Name>waitdoor</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>AF</ID>
+    <Name>opendoor2</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>B0</ID>
+    <Name>closedoor2</Name>
+    <Type>.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>B1</ID>
+    <Name>cmdB1</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>B2</ID>
+    <Name>cmdB2</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>B3</ID>
+    <Name>getcoin</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>B4</ID>
+    <Name>addcoin</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>B5</ID>
+    <Name>subcoin</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>B6</ID>
+    <Name>setwild</Name>
+    <Type>.hword.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>B7</ID>
+    <Name>wildbattle</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>B8</ID>
+    <Name>setvirtualaddress</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>B9</ID>
+    <Name>virtualgoto</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>BA</ID>
+    <Name>virtualcall</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>BB</ID>
+    <Name>virtualgotoif</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>BC</ID>
+    <Name>virtualcallif</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>BD</ID>
+    <Name>virtualmsgbox</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>BE</ID>
+    <Name>virtualloadpointer</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>BF</ID>
+    <Name>virtualbuffer</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>C0</ID>
+    <Name>showcoin</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>C1</ID>
+    <Name>hidecoin</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>C2</ID>
+    <Name>updatecoin</Name>
+    <Type>.bytex2</Type>
+  </node>
+
+  <node>
+    <ID>C3</ID>
+    <Name>addhidevar</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>C4</ID>
+    <Name>setescape</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>C5</ID>
+    <Name>waitcry</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>C6</ID>
+    <Name>bufferbox</Name>
+    <Type>.byte.hword</Type>
+  </node>
+
+  <node>
+    <ID>C7</ID>
+    <Name>setfont</Name>
+    <Type>.byte</Type>
+  </node>
+
+  <node>
+    <ID>C8</ID>
+    <Name>cmdC8</Name>
+    <Type>.word</Type>
+  </node>
+
+  <node>
+    <ID>C9</ID>
+    <Name>cmdC9</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>CA</ID>
+    <Name>signmsg</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>CB</ID>
+    <Name>releasemsg</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>CC</ID>
+    <Name>cmphidevar</Name>
+    <Type>.byte.word</Type>
+  </node>
+
+  <node>
+    <ID>CD</ID>
+    <Name>setpokemondflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>CE</ID>
+    <Name>checkpokemonflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>CF</ID>
+    <Name>executeram</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D0</ID>
+    <Name>setworldmapflag</Name>
+    <Type>.hword</Type>
+  </node>
+
+  <node>
+    <ID>D1</ID>
+    <Name>warppanel2</Name>
+    <Type>.bytex3.hwordx2</Type>
+  </node>
+
+  <node>
+    <ID>D2</ID>
+    <Name>setcatchlocation</Name>
+    <Type>.hword.byte</Type>
+  </node>
+
+  <node>
+    <ID>D3</ID>
+    <Name>braille2</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D4</ID>
+    <Name>bufferitems</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D5</ID>
+    <Name>cmdD5</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D6</ID>
+    <Name>cmdD6</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D7</ID>
+    <Name>cmdD7</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D8</ID>
+    <Name>cmdD8</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>D9</ID>
+    <Name>cmdD9</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DA</ID>
+    <Name>cmdDA</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DB</ID>
+    <Name>cmdDB</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DC</ID>
+    <Name>cmdDC</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DD</ID>
+    <Name>cmdDD</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DE</ID>
+    <Name>cmdDE</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>DF</ID>
+    <Name>cmdDF</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E0</ID>
+    <Name>cmdE0</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E1</ID>
+    <Name>cmdE1</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E2</ID>
+    <Name>cmdE2</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E3</ID>
+    <Name>cmdE3</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E4</ID>
+    <Name>cmdE4</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E5</ID>
+    <Name>cmdE5</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E6</ID>
+    <Name>cmdE6</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E7</ID>
+    <Name>cmdE7</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E8</ID>
+    <Name>cmdE8</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>E9</ID>
+    <Name>cmdE9</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>EA</ID>
+    <Name>cmdEA</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>EB</ID>
+    <Name>cmdEB</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>EC</ID>
+    <Name>cmdEC</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>ED</ID>
+    <Name>cmdED</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>EE</ID>
+    <Name>cmdEE</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>EF</ID>
+    <Name>cmdEF</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F0</ID>
+    <Name>cmdF0</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F1</ID>
+    <Name>cmdF1</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F2</ID>
+    <Name>cmdF2</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F3</ID>
+    <Name>cmdF3</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F4</ID>
+    <Name>cmdF4</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F5</ID>
+    <Name>cmdF5</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F6</ID>
+    <Name>cmdF6</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F7</ID>
+    <Name>cmdF7</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F8</ID>
+    <Name>cmdF8</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>F9</ID>
+    <Name>cmdF9</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FA</ID>
+    <Name>cmdFA</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FB</ID>
+    <Name>cmdFB</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FC</ID>
+    <Name>cmdFC</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FD</ID>
+    <Name>cmdFD</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FE</ID>
+    <Name>cmdFE</Name>
+    <Type>.void</Type>
+  </node>
+
+  <node>
+    <ID>FF</ID>
+    <Name>freespace</Name>
+    <Type>.endm</Type>
+  </node>
+</table>
