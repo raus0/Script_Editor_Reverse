@@ -317,6 +317,44 @@ namespace Script_Editor_Reverse
                             i++;
                             break;
 
+                        case ".word.call":
+                            cmdLine = BC + " ";
+
+                            i++;
+                            k = i;
+                            address = "0x";
+                            offset = "";
+
+                            for (int w = 3; w >= 0; w--)
+                            {
+                                offset += Convert.ToString(string.Format("{0:X2}", file[location + k + w]));
+                                if (w == 3)
+                                {
+                                    offset = offset.Replace("00", "");
+                                    offset = offset.Replace("08", "");
+                                }
+                                i++;
+                            }
+                            i--;
+                            offset.ToUpper();
+
+                            address += offset;
+                            for (int z = 0; z < 5; z++)
+                            {
+                                address = address.Replace("0x0", "0x");
+                            }
+
+                            cmdLine += address;
+
+                            sublocationA = location;
+                            location = CheckOffset.Checkoffset(location, address);
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location);
+                            location = sublocationA;
+
+                            toReturn += cmdLine + "\n";
+                            i++;
+                            break;
+
                         case ".word.branch":
                             cmdLine = BC + " ";
 
@@ -350,6 +388,8 @@ namespace Script_Editor_Reverse
                             location = CheckOffset.Checkoffset(location, address);
                             subLine += "\n" + DecompileCommand(selectedROMPath, location);
                             location = sublocationA;
+
+                            CommandType = endCmd;
 
                             toReturn += cmdLine + "\n";
                             i++;

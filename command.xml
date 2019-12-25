@@ -4,13 +4,13 @@
   <node>
     <ID>00</ID>
     <Name>nop</Name>
-    <Type>.void</Type>
+    <Type>.endm</Type>
   </node>
 
   <node>
     <ID>01</ID>
     <Name>nop1</Name>
-    <Type>.void</Type>
+    <Type>.endm</Type>
   </node>
 
   <node>
@@ -28,7 +28,7 @@
   <node>
     <ID>04</ID>
     <Name>call</Name>
-    <Type>.word.branch</Type>
+    <Type>.word.call</Type>
   </node>
 
   <node>
