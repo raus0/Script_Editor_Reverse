@@ -347,7 +347,7 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             sublocationA = location;
-                            location = CheckOffset.Checkoffset(location, address);
+                            location = CheckOffset.Listing(location, address);
                             subLine += "\n" + DecompileCommand(selectedROMPath, location);
                             location = sublocationA;
 
@@ -385,7 +385,7 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             sublocationA = location;
-                            location = CheckOffset.Checkoffset(location, address);
+                            location = CheckOffset.Listing(location, address);
                             subLine += "\n" + DecompileCommand(selectedROMPath, location);
                             location = sublocationA;
 
@@ -504,7 +504,7 @@ namespace Script_Editor_Reverse
                             cmdLine += " " + address;
 
                             sublocationB = location;
-                            location = CheckOffset.Checkoffset(location, address);
+                            location = CheckOffset.Listing(location, address);
                             subLine += "\n" + DecompileCommand(selectedROMPath, location);
                             location = sublocationB;
 
@@ -1254,7 +1254,7 @@ namespace Script_Editor_Reverse
                                     if (c == "0x1" || c == "0x2" || c == "0x6" || c == "0x8")
                                     {
                                         sublocationC = location;
-                                        location = CheckOffset.Checkoffset(location, address);
+                                        location = CheckOffset.Listing(location, address);
                                         subLine += "\n" + DecompileCommand(selectedROMPath, location);
                                         location = sublocationC;
                                     }

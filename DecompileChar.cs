@@ -16,7 +16,7 @@ namespace Script_Editor_Reverse
 
             int locationChar = location;
 
-            locationChar = CheckOffset.Checkoffset(locationChar, address);
+            locationChar = CheckOffset.Listing(locationChar, address);
 
             do
             {

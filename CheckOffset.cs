@@ -1,15 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Windows;
-using System.Windows.Input;
-using Microsoft.Win32;
 using MessageBox = System.Windows.MessageBox;
 
 namespace Script_Editor_Reverse
 {
     public class CheckOffset
     {
-        public static int Checkoffset(int location, string DecompileOffset)
+        public static int Listing(int location, string DecompileOffset)
         {
             //入力したオフセットをチェック
             bool success = int.TryParse(DecompileOffset, out location);
