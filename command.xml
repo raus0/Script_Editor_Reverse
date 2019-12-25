@@ -87,7 +87,7 @@
 
   <node>
     <ID>0E</ID>
-    <Name>setbyte</Name>
+    <Name>mysterybyte</Name>
     <Type>.byte</Type>
   </node>
 
@@ -423,7 +423,7 @@
 
   <node>
     <ID>46</ID>
-    <Name>checkitemroom</Name>
+    <Name>checkitemspace</Name>
     <Type>.hwordx2</Type>
   </node>
 
@@ -1235,7 +1235,7 @@
 
   <node>
     <ID>CD</ID>
-    <Name>setpokemondflag</Name>
+    <Name>setpokemonflag</Name>
     <Type>.hword</Type>
   </node>
 
