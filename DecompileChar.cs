@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace Script_Editor_Reverse
 {
     public class DecompileChar
     {
-        public static string DecompileMSG(int location, string address, string msgLine, byte[] file)
+        public static string DecompileMSG(int location, string address, string msgLine, byte[] file, List<int> list)
         {
             int t = 0;
             string m;
@@ -16,7 +17,7 @@ namespace Script_Editor_Reverse
 
             int locationChar = location;
 
-            locationChar = CheckOffset.Listing(locationChar, address);
+            locationChar = CheckOffset.Listing(locationChar, address, list);
 
             do
             {

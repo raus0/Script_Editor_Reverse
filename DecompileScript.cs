@@ -2,12 +2,13 @@
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using System.Collections.Generic;
 
 namespace Script_Editor_Reverse
 {
     public class DecompileScript
     {
-        public static string DecompileCommand(string selectedROMPath, int location)
+        public static string DecompileCommand(string selectedROMPath, int location, List<int> list)
         {
             //外部プロセスで開いているファイルを読み取る
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -347,8 +348,8 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             sublocationA = location;
-                            location = CheckOffset.Listing(location, address);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location);
+                            location = CheckOffset.Listing(location, address, list);
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocationA;
 
                             toReturn += cmdLine + "\n";
@@ -385,8 +386,8 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             sublocationA = location;
-                            location = CheckOffset.Listing(location, address);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location);
+                            location = CheckOffset.Listing(location, address, list);
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocationA;
 
                             CommandType = endCmd;
@@ -504,8 +505,8 @@ namespace Script_Editor_Reverse
                             cmdLine += " " + address;
 
                             sublocationB = location;
-                            location = CheckOffset.Listing(location, address);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location);
+                            location = CheckOffset.Listing(location, address, list);
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocationB;
 
                             toReturn += cmdLine + "\n";
@@ -1246,7 +1247,7 @@ namespace Script_Editor_Reverse
 
                                 if (n < arg - 1)
                                 {
-                                    msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file);
+                                    msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
                                     address += " ";
                                 }
                                 if (n == arg - 1)
@@ -1254,13 +1255,13 @@ namespace Script_Editor_Reverse
                                     if (c == "0x1" || c == "0x2" || c == "0x6" || c == "0x8")
                                     {
                                         sublocationC = location;
-                                        location = CheckOffset.Listing(location, address);
-                                        subLine += "\n" + DecompileCommand(selectedROMPath, location);
+                                        location = CheckOffset.Listing(location, address, list);
+                                        subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                                         location = sublocationC;
                                     }
                                     else
                                     {
-                                        msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file);
+                                        msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
                                     }
                                 }
 
@@ -1300,7 +1301,7 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file);
+                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1359,7 +1360,7 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file);
+                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
 
                             toReturn += cmdLine + "\n";
                             i++;

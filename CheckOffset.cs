@@ -1,12 +1,14 @@
 ﻿using System;
 using System.IO;
 using MessageBox = System.Windows.MessageBox;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Script_Editor_Reverse
 {
     public class CheckOffset
     {
-        public static int Listing(int location, string DecompileOffset)
+        public static int Listing(int location, string DecompileOffset, List<int> list)
         {
             //入力したオフセットをチェック
             bool success = int.TryParse(DecompileOffset, out location);
@@ -20,6 +22,10 @@ namespace Script_Editor_Reverse
             }
             try
             {
+                list.Add(location);
+
+                IEnumerable<int> duplicate = list.Distinct();
+
                 //return location; ここに記述しても値を返さない　tryを削ることも不可
             }
             catch (IOException)

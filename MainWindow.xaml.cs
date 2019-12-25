@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
 using MessageBox = System.Windows.MessageBox;
+using System.Collections.Generic;
+
 
 namespace Script_Editor_Reverse
 {
@@ -11,6 +13,7 @@ namespace Script_Editor_Reverse
     {
         string selectedROMPath;
         int location;
+        List<int> list = new List<int>();
 
         public MainWindow()
         {
@@ -32,8 +35,8 @@ namespace Script_Editor_Reverse
                 {
                     txtDecompileOffset.Text = string.Format("0x{1}", i, Commands[i]);
                     //逆コンパイル実行
-                    location = CheckOffset.Listing(location, txtDecompileOffset.Text);
-                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location);
+                    location = CheckOffset.Listing(location, txtDecompileOffset.Text, list);
+                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list);
                 }
             }
         }
@@ -41,8 +44,8 @@ namespace Script_Editor_Reverse
         private void Decompile(object sender, RoutedEventArgs e)
         {
             //逆コンパイル実行
-            location = CheckOffset.Listing(location, txtDecompileOffset.Text);
-            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location);
+            location = CheckOffset.Listing(location, txtDecompileOffset.Text, list);
+            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list);
         }
 
         private string GetROMCode()
