@@ -349,12 +349,7 @@ namespace Script_Editor_Reverse
 
                             sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-
-                            if (baseCount == distinctCount)
-                            {
-                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            }
-
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocation;
 
                             toReturn += cmdLine + "\n";
@@ -392,12 +387,7 @@ namespace Script_Editor_Reverse
 
                             sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-
-                            if (baseCount == distinctCount)
-                            {
-                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            }
-
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocation;
 
                             CommandType = endCmd;
@@ -516,12 +506,7 @@ namespace Script_Editor_Reverse
 
                             sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-
-                            if (baseCount == distinctCount)
-                            {
-                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            }
-
+                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                             location = sublocation;
 
                             toReturn += cmdLine + "\n";
@@ -1271,10 +1256,7 @@ namespace Script_Editor_Reverse
                                     {
                                         sublocation = location;
                                         location = CheckOffset.Listing(location, address, list);
-                                        if (baseCount == distinctCount)
-                                        {
-                                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                                        }
+                                        subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
                                         location = sublocation;
                                     }
                                     else
@@ -1322,10 +1304,7 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            if (baseCount == distinctCount)
-                            {
-                                msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
-                            }
+                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1384,10 +1363,7 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            if (baseCount == distinctCount)
-                            {
-                                msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
-                            }
+                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
 
                             toReturn += cmdLine + "\n";
                             i++;
