@@ -15,9 +15,6 @@ namespace Script_Editor_Reverse
         string selectedROMPath;
         int location;
 
-        string cmdLine = "";
-        string msgLine = "";
-
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +24,9 @@ namespace Script_Editor_Reverse
 
             for (int i = 1; i < Commands.Length; i++)
             {
+                string cmdLine = "";
+                string msgLine = "";
+
                 if (i == 1)
                 {
                     //ファイル取得
@@ -67,7 +67,32 @@ namespace Script_Editor_Reverse
 
         private void Decompile(object sender, RoutedEventArgs e)
         {
+            string cmdLine = "";
+            string msgLine = "";
+
             //逆コンパイル実行
+            List<int> list = new List<int>();
+            List<int> msg = new List<int>();
+
+            location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
+
+            list = list.Distinct().ToList();
+
+            foreach (int sublocation in list)
+            {
+                cmdLine += "\n" + DecompileScript.DecompileCommand(selectedROMPath, sublocation, list, msg);
+            }
+
+            msg = msg.Distinct().ToList();
+
+            foreach (int locationChar in msg)
+            {
+                msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+            }
+
+            textEditor.Text += cmdLine + msgLine;
         }
 
         private string GetROMCode()
