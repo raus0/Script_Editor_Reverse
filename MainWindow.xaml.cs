@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
@@ -13,7 +14,9 @@ namespace Script_Editor_Reverse
     {
         string selectedROMPath;
         int location;
-        List<int> list = new List<int>();
+
+        string cmdLine = "";
+        string msgLine = "";
 
         public MainWindow()
         {
@@ -34,9 +37,30 @@ namespace Script_Editor_Reverse
                 else if (i == 2)
                 {
                     txtDecompileOffset.Text = string.Format("0x{1}", i, Commands[i]);
+
                     //逆コンパイル実行
-                    location = CheckOffset.Listing(location, txtDecompileOffset.Text, list);
-                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list);
+                    List<int> list = new List<int>();
+                    List<int> msg = new List<int>();
+
+                    location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
+
+                    list = list.Distinct().ToList();
+
+                    foreach (int sublocation in list)
+                    {
+                        cmdLine += "\n" + DecompileScript.DecompileCommand(selectedROMPath, sublocation, list, msg);
+                    }
+
+                    msg = msg.Distinct().ToList();
+
+                    foreach (int locationChar in msg)
+                    {
+                        msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+                    }
+
+                    textEditor.Text += cmdLine + msgLine;
                 }
             }
         }
@@ -44,8 +68,6 @@ namespace Script_Editor_Reverse
         private void Decompile(object sender, RoutedEventArgs e)
         {
             //逆コンパイル実行
-            location = CheckOffset.Listing(location, txtDecompileOffset.Text, list);
-            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list);
         }
 
         private string GetROMCode()

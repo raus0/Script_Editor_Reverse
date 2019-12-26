@@ -1,113 +1,115 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using System.Collections.Generic;
 
 namespace Script_Editor_Reverse
 {
     public class DecompileChar
     {
-        public static string DecompileMSG(int location, string address, string msgLine, byte[] file, List<int> list)
+        public static string DecompileMSG(string selectedROMPath, int location)
         {
-            int t = 0;
-            string m;
-            string endChar = "Ω";
-
-            msgLine += "\n" + "#msg " + address + "\n";
-
-            int locationChar = location;
-
-            locationChar = CheckOffset.Listing(locationChar, address, list);
-
-            do
+            //外部プロセスで開いているファイルを読み取る
+            using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
-                m = Convert.ToString(string.Format("{0:x2}", file[locationChar + t]));
+                byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
+                string m;
+                string endChar = "Ω";
 
-                var mojixml = XElement.Load(@"moji.xml");
+                string toReturn = "#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
 
-                switch (m)
+                int t = 0;
+
+                do
                 {
-                    case "ab":
-                        m = m.Replace("ab", "！");
-                        msgLine += m;
-                        t++;
-                        break;
+                    m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
-                    case "ac":
-                        m = m.Replace("ac", "？");
-                        msgLine += m;
-                        t++;
-                        break;
+                    var mojixml = XElement.Load(@"moji.xml");
 
-                    case "fa":
-                        m = m.Replace("fa", "￥m");
-                        msgLine += m + "\n";
-                        t++;
-                        break;
+                    switch (m)
+                    {
+                        case "ab":
+                            m = m.Replace("ab", "！");
+                            toReturn += m;
+                            t++;
+                            break;
 
-                    case "fb":
-                        m = m.Replace("fb", "￥p");
-                        msgLine += m + "\n";
-                        t++;
-                        break;
+                        case "ac":
+                            m = m.Replace("ac", "？");
+                            toReturn += m;
+                            t++;
+                            break;
 
-                    case "fd":
-                        t++;
-                        m += " " + Convert.ToString(string.Format("{0:x2}", file[locationChar + t]));
+                        case "fa":
+                            m = m.Replace("fa", "￥m");
+                            toReturn += m + "\n";
+                            t++;
+                            break;
 
-                        var fdxx = (
-                            from p in mojixml.Elements("node")
-                            where p.Element("ID").Value == m
-                            select p
-                            ).FirstOrDefault();
+                        case "fb":
+                            m = m.Replace("fb", "￥p");
+                            toReturn += m + "\n";
+                            t++;
+                            break;
 
-                        if (fdxx != null)
-                        {
-                            msgLine += fdxx.Element("moji").Value;
-                        }
-                        else
-                        {
-                            msgLine += m + " ";
-                        }
-                        t++;
-                        break;
+                        case "fd":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
-                    case "fe":
-                        m = m.Replace("fe", "￥n");
-                        msgLine += m + "\n";
-                        t++;
-                        break;
+                            var fdxx = (
+                                from p in mojixml.Elements("node")
+                                where p.Element("ID").Value == m
+                                select p
+                                ).FirstOrDefault();
 
-                    case "ff":
-                        m = m.Replace("ff", "Ω");
-                        msgLine += m + "\n";
-                        t++;
-                        break;
+                            if (fdxx != null)
+                            {
+                                toReturn += fdxx.Element("moji").Value;
+                            }
+                            else
+                            {
+                                toReturn += m + " ";
+                            }
+                            t++;
+                            break;
 
-                    default:
-                        m = Convert.ToString(string.Format("{0:x2}", file[locationChar + t]));
+                        case "fe":
+                            m = m.Replace("fe", "￥n");
+                            toReturn += m + "\n";
+                            t++;
+                            break;
 
-                        var moji = (
-                            from p in mojixml.Elements("node")
-                            where p.Element("ID").Value == m
-                            select p
-                            ).FirstOrDefault();
+                        case "ff":
+                            m = m.Replace("ff", "Ω");
+                            toReturn += m + "\n";
+                            t++;
+                            break;
 
-                        if (moji != null)
-                        {
-                            msgLine += moji.Element("moji").Value;
-                        }
-                        else
-                        {
-                            msgLine += m + " ";
-                        }
-                        t++;
-                        break;
+                        default:
+                            m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+
+                            var moji = (
+                                from p in mojixml.Elements("node")
+                                where p.Element("ID").Value == m
+                                select p
+                                ).FirstOrDefault();
+
+                            if (moji != null)
+                            {
+                                toReturn += moji.Element("moji").Value;
+                            }
+                            else
+                            {
+                                toReturn += m + " ";
+                            }
+                            t++;
+                            break;
+                    }
                 }
-            }
-            while (m != endChar);
+                while (m != endChar);
 
-            return msgLine;
+                return toReturn;
+            }
         }
     }
 }

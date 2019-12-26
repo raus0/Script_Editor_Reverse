@@ -1,15 +1,13 @@
 ﻿using System;
 using System.IO;
 using MessageBox = System.Windows.MessageBox;
-using System.Collections.Generic;
 
 namespace Script_Editor_Reverse
 {
     public class CheckOffset
     {
-        public static int Listing(int location, string DecompileOffset, List<int> list)
+        public static int Listing(int location, string DecompileOffset)
         {
-            //入力したオフセットをチェック
             bool success = int.TryParse(DecompileOffset, out location);
             if (!success)
             {
@@ -21,8 +19,6 @@ namespace Script_Editor_Reverse
             }
             try
             {
-                list.Add(location);
-
                 //return location; ここに記述しても値を返さない　tryを削ることも不可
             }
             catch (IOException)

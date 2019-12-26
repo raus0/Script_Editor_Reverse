@@ -8,7 +8,7 @@ namespace Script_Editor_Reverse
 {
     public class DecompileScript
     {
-        public static string DecompileCommand(string selectedROMPath, int location, List<int> list)
+        public static string DecompileCommand(string selectedROMPath, int location, List<int> list, List<int> msg)
         {
             //外部プロセスで開いているファイルを読み取る
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -19,12 +19,8 @@ namespace Script_Editor_Reverse
                 string cmdLine = "";
                 string address = "";
                 string offset = "";
-                string msgLine = "";
-                string subLine = "";
                 string BC = "";
                 string CommandType = "";
-
-                int sublocation;
 
                 string toReturn = "#org 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
 
@@ -33,8 +29,8 @@ namespace Script_Editor_Reverse
                 int k = 0;
                 int arg = 0;
 
-                int baseCount = list.Count;
-                int distinctCount = (from x in list select x).Distinct().Count();
+                int sublocation;
+                int locationChar;
 
                 do
                 {
@@ -347,10 +343,9 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            sublocation = location;
-                            location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocation;
+                            sublocation = CheckOffset.Listing(location, address);
+
+                            list.Add(sublocation);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -385,10 +380,9 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            sublocation = location;
-                            location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocation;
+                            sublocation = CheckOffset.Listing(location, address);
+
+                            list.Add(sublocation);
 
                             CommandType = endCmd;
 
@@ -504,10 +498,9 @@ namespace Script_Editor_Reverse
 
                             cmdLine += " " + address;
 
-                            sublocation = location;
-                            location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocation;
+                            sublocation = CheckOffset.Listing(location, address);
+
+                            list.Add(sublocation);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1247,24 +1240,26 @@ namespace Script_Editor_Reverse
 
                                 if (n < arg - 1)
                                 {
-                                    msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                                    locationChar = CheckOffset.Listing(location, address);
+
+                                    msg.Add(locationChar);
+
                                     address += " ";
                                 }
                                 if (n == arg - 1)
                                 {
+
                                     if (c == "0x1" || c == "0x2" || c == "0x6" || c == "0x8")
                                     {
-                                        sublocation = location;
-                                        location = CheckOffset.Listing(location, address, list);
-                                        subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                                        location = sublocation;
+                                        sublocation = CheckOffset.Listing(location, address);
+
+                                        list.Add(sublocation);
                                     }
                                     else
                                     {
-                                        if (baseCount == distinctCount)
-                                        {
-                                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
-                                        }
+                                        locationChar = CheckOffset.Listing(location, address);
+
+                                        msg.Add(locationChar);
                                     }
                                 }
 
@@ -1304,7 +1299,9 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            locationChar = CheckOffset.Listing(location, address);
+
+                            msg.Add(locationChar);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1363,7 +1360,9 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            locationChar = CheckOffset.Listing(location, address);
+
+                            msg.Add(locationChar);
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1377,8 +1376,6 @@ namespace Script_Editor_Reverse
                 }
                 while (CommandType != endCmd);
 
-                toReturn += msgLine;
-                toReturn += subLine;
                 return toReturn;
             }
         }
