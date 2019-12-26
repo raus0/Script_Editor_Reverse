@@ -16,7 +16,6 @@ namespace Script_Editor_Reverse
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
                 string c;
                 string endCmd = ".endm";
-                string toReturn = "";
                 string cmdLine = "";
                 string address = "";
                 string offset = "";
@@ -25,16 +24,17 @@ namespace Script_Editor_Reverse
                 string BC = "";
                 string CommandType = "";
 
-                int sublocationA;
-                int sublocationB;
-                int sublocationC;
+                int sublocation;
 
-                toReturn += "#org 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
+                string toReturn = "#org 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
 
                 int i = 0;
                 int j = 0;
                 int k = 0;
                 int arg = 0;
+
+                int baseCount = list.Count;
+                int distinctCount = (from x in list select x).Distinct().Count();
 
                 do
                 {
@@ -347,10 +347,15 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            sublocationA = location;
+                            sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocationA;
+
+                            if (baseCount == distinctCount)
+                            {
+                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
+                            }
+
+                            location = sublocation;
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -385,10 +390,15 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            sublocationA = location;
+                            sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocationA;
+
+                            if (baseCount == distinctCount)
+                            {
+                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
+                            }
+
+                            location = sublocation;
 
                             CommandType = endCmd;
 
@@ -504,10 +514,15 @@ namespace Script_Editor_Reverse
 
                             cmdLine += " " + address;
 
-                            sublocationB = location;
+                            sublocation = location;
                             location = CheckOffset.Listing(location, address, list);
-                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                            location = sublocationB;
+
+                            if (baseCount == distinctCount)
+                            {
+                                subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
+                            }
+
+                            location = sublocation;
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1254,14 +1269,20 @@ namespace Script_Editor_Reverse
                                 {
                                     if (c == "0x1" || c == "0x2" || c == "0x6" || c == "0x8")
                                     {
-                                        sublocationC = location;
+                                        sublocation = location;
                                         location = CheckOffset.Listing(location, address, list);
-                                        subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
-                                        location = sublocationC;
+                                        if (baseCount == distinctCount)
+                                        {
+                                            subLine += "\n" + DecompileCommand(selectedROMPath, location, list);
+                                        }
+                                        location = sublocation;
                                     }
                                     else
                                     {
-                                        msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                                        if (baseCount == distinctCount)
+                                        {
+                                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                                        }
                                     }
                                 }
 
@@ -1301,7 +1322,10 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            if (baseCount == distinctCount)
+                            {
+                                msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            }
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1360,7 +1384,10 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            if (baseCount == distinctCount)
+                            {
+                                msgLine = DecompileChar.DecompileMSG(location, address, msgLine, file, list);
+                            }
 
                             toReturn += cmdLine + "\n";
                             i++;
