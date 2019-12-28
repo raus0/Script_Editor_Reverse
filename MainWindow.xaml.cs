@@ -24,7 +24,6 @@ namespace Script_Editor_Reverse
 
             for (int i = 1; i < Commands.Length; i++)
             {
-                string cmdLine = "";
                 string msgLine = "";
 
                 if (i == 1)
@@ -46,28 +45,20 @@ namespace Script_Editor_Reverse
 
                     textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
 
-                    list = list.Distinct().ToList();
-
-                    foreach (int sublocation in list)
-                    {
-                        cmdLine += "\n" + DecompileScript.DecompileCommand(selectedROMPath, sublocation, list, msg);
-                    }
-
                     msg = msg.Distinct().ToList();
 
                     foreach (int locationChar in msg)
                     {
                         msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
                     }
-
-                    textEditor.Text += cmdLine + msgLine;
+                    
+                    textEditor.Text += msgLine;
                 }
             }
         }
 
         private void Decompile(object sender, RoutedEventArgs e)
         {
-            string cmdLine = "";
             string msgLine = "";
 
             //逆コンパイル実行
@@ -78,13 +69,6 @@ namespace Script_Editor_Reverse
 
             textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
 
-            list = list.Distinct().ToList();
-
-            foreach (int sublocation in list)
-            {
-                cmdLine += "\n" + DecompileScript.DecompileCommand(selectedROMPath, sublocation, list, msg);
-            }
-
             msg = msg.Distinct().ToList();
 
             foreach (int locationChar in msg)
@@ -92,7 +76,7 @@ namespace Script_Editor_Reverse
                 msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
             }
 
-            textEditor.Text += cmdLine + msgLine;
+            textEditor.Text += msgLine;
         }
 
         private string GetROMCode()

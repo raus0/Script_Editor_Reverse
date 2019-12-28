@@ -16,6 +16,7 @@ namespace Script_Editor_Reverse
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
                 string c;
                 string endCmd = ".endm";
+                string subLine = "";
                 string cmdLine = "";
                 string address = "";
                 string offset = "";
@@ -345,7 +346,15 @@ namespace Script_Editor_Reverse
 
                             sublocation = CheckOffset.Listing(location, address);
 
-                            list.Add(sublocation);
+                            if (list.Contains(sublocation))
+                            {
+                                //リストに要素が含まれている場合は逆コンパイルを実行しない
+                            }
+                            else
+                            {
+                                list.Add(sublocation);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                            }
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -382,7 +391,15 @@ namespace Script_Editor_Reverse
 
                             sublocation = CheckOffset.Listing(location, address);
 
-                            list.Add(sublocation);
+                            if (list.Contains(sublocation))
+                            {
+                                //リストに要素が含まれている場合は逆コンパイルを実行しない
+                            }
+                            else
+                            {
+                                list.Add(sublocation);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                            }
 
                             CommandType = endCmd;
 
@@ -500,7 +517,15 @@ namespace Script_Editor_Reverse
 
                             sublocation = CheckOffset.Listing(location, address);
 
-                            list.Add(sublocation);
+                            if (list.Contains(sublocation))
+                            {
+                                //リストに要素が含まれている場合は逆コンパイルを実行しない
+                            }
+                            else
+                            {
+                                list.Add(sublocation);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                            }
 
                             toReturn += cmdLine + "\n";
                             i++;
@@ -1253,7 +1278,15 @@ namespace Script_Editor_Reverse
                                     {
                                         sublocation = CheckOffset.Listing(location, address);
 
-                                        list.Add(sublocation);
+                                        if (list.Contains(sublocation))
+                                        {
+                                            //リストに要素が含まれている場合は逆コンパイルを実行しない
+                                        }
+                                        else
+                                        {
+                                            list.Add(sublocation);
+                                            subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                                        }
                                     }
                                     else
                                     {
@@ -1375,6 +1408,8 @@ namespace Script_Editor_Reverse
                     }
                 }
                 while (CommandType != endCmd);
+
+                toReturn += subLine;
 
                 return toReturn;
             }
