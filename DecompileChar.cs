@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -7,42 +8,48 @@ namespace Script_Editor_Reverse
 {
     public class DecompileChar
     {
-        public static string DecompileMSG(string selectedROMPath, int location)
+        public static List<string> DecompileMSG(string selectedROMPath, int location)
         {
             //外部プロセスで開いているファイルを読み取る
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
+                List<string> Result = new List<string>();
+
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
                 string m;
                 string endChar = "Ω";
 
-                string toReturn = "#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
+                Result.Add("#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)));
+
+                string resultbuffer = "";
 
                 int t = 0;
+
+                var mojixml = XElement.Load(@"moji.xml");
 
                 do
                 {
                     m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
-                    var mojixml = XElement.Load(@"moji.xml");
-
                     switch (m)
                     {
                         case "00":
                             m = m.Replace("00", " ");
-                            toReturn += m;
+                            resultbuffer += m;
                             t++;
                             break;
 
                         case "fa":
                             m = m.Replace("fa", "￥m");
-                            toReturn += m + "\n";
+                            Result.Add(resultbuffer + m);
+                            resultbuffer = "";
                             t++;
                             break;
 
                         case "fb":
                             m = m.Replace("fb", "￥p");
-                            toReturn += m + "\n";
+                            Result.Add(resultbuffer + m);
+                            resultbuffer = "";
                             t++;
                             break;
 
@@ -58,24 +65,26 @@ namespace Script_Editor_Reverse
 
                             if (fdxx != null)
                             {
-                                toReturn += fdxx.Element("moji").Value;
+                                resultbuffer += fdxx.Element("moji").Value;
                             }
                             else
                             {
-                                toReturn += m + " ";
+                                resultbuffer += m + " ";
                             }
                             t++;
                             break;
 
                         case "fe":
                             m = m.Replace("fe", "￥n");
-                            toReturn += m + "\n";
+                            Result.Add(resultbuffer + m);
+                            resultbuffer = "";
                             t++;
                             break;
 
                         case "ff":
                             m = m.Replace("ff", "Ω");
-                            toReturn += m + "\n";
+                            Result.Add(resultbuffer + m);
+                            resultbuffer = "";
                             t++;
                             break;
 
@@ -90,11 +99,11 @@ namespace Script_Editor_Reverse
 
                             if (moji != null)
                             {
-                                toReturn += moji.Element("moji").Value;
+                                resultbuffer += moji.Element("moji").Value;
                             }
                             else
                             {
-                                toReturn += m + " ";
+                                resultbuffer += m + " ";
                             }
                             t++;
                             break;
@@ -102,7 +111,9 @@ namespace Script_Editor_Reverse
                 }
                 while (m != endChar);
 
-                return toReturn;
+                Result.Add("");
+
+                return Result;
             }
         }
     }

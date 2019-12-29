@@ -8,11 +8,13 @@ namespace Script_Editor_Reverse
 {
     public class DecompileScript
     {
-        public static string DecompileCommand(string selectedROMPath, int location, List<int> list, List<int> msg, List<int> movement)
+        public static List<string> DecompileCommand(string selectedROMPath, int location, List<int> list, List<int> msg, List<int> movement)
         {
             //外部プロセスで開いているファイルを読み取る
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
+                List<string> Result = new List<string>();
+
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
                 string c;
                 string endCmd = ".endm";
@@ -23,7 +25,7 @@ namespace Script_Editor_Reverse
                 string BC = "";
                 string CommandType = "";
 
-                string toReturn = "#org 0x" + Convert.ToString(string.Format("{0:X6}", location)) + "\n";
+                Result.Add("#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)));
 
                 int i = 0;
                 int j = 0;
@@ -34,12 +36,12 @@ namespace Script_Editor_Reverse
                 int locationChar;
                 int locationMovement;
 
+                var commandxml = XElement.Load(@"command.xml");
+
                 do
                 {
                     c = Convert.ToString(string.Format("{0:X2}", file[location + i]));
                     c.ToUpper();
-
-                    var commandxml = XElement.Load(@"command.xml");
 
                     var Name = (
                         from p in commandxml.Elements("node")
@@ -75,12 +77,14 @@ namespace Script_Editor_Reverse
                     switch (CommandType)
                     {
                         case ".endm":
-                            toReturn += BC + "\n";
+                            Result.Add(BC);
+                            
                             i++;
                             break;
 
                         case ".void":
-                            toReturn += BC + "\n";
+                            Result.Add(BC);
+                            
                             i++;
                             break;
 
@@ -92,7 +96,8 @@ namespace Script_Editor_Reverse
                             c.ToUpper();
                             cmdLine += c;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -112,7 +117,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -132,7 +138,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -152,7 +159,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -172,7 +180,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -201,7 +210,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -238,7 +248,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -275,7 +286,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -312,7 +324,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -354,10 +367,11 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -399,12 +413,14 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
+                                subLine += "\n" + string.Join(Environment.NewLine,
+                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             CommandType = endCmd;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -437,7 +453,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -478,7 +495,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -525,10 +543,12 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
+                                subLine += "\n" + string.Join(Environment.NewLine,
+                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -566,7 +586,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += " " + address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -604,7 +625,8 @@ namespace Script_Editor_Reverse
                             c.ToUpper();
                             cmdLine += c;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -638,7 +660,8 @@ namespace Script_Editor_Reverse
                             c.ToUpper();
                             cmdLine += c;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -672,7 +695,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -727,7 +751,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -769,7 +794,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -811,7 +837,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -848,7 +875,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -893,7 +921,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -961,7 +990,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1016,7 +1046,8 @@ namespace Script_Editor_Reverse
                                 }
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1072,7 +1103,8 @@ namespace Script_Editor_Reverse
 
                             cmdLine += address;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1164,7 +1196,8 @@ namespace Script_Editor_Reverse
                             c.ToUpper();
                             cmdLine += c;
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1286,7 +1319,8 @@ namespace Script_Editor_Reverse
                                         else
                                         {
                                             list.Add(sublocation);
-                                            subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
+                                            subLine += "\n" + string.Join(Environment.NewLine,
+                                                           DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                                         }
                                     }
                                     else
@@ -1300,7 +1334,8 @@ namespace Script_Editor_Reverse
                                 cmdLine += address;
                             }
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1337,7 +1372,8 @@ namespace Script_Editor_Reverse
 
                             msg.Add(locationChar);
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1398,7 +1434,8 @@ namespace Script_Editor_Reverse
 
                             msg.Add(locationChar);
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
@@ -1457,21 +1494,23 @@ namespace Script_Editor_Reverse
 
                             movement.Add(locationMovement);
 
-                            toReturn += cmdLine + "\n";
+                            Result.Add(cmdLine);
+                            
                             i++;
                             break;
 
                         default:
-                            toReturn += BC + "\n";
+                            Result.Add(BC);
+                            
                             i++;
                             break;
                     }
                 }
                 while (CommandType != endCmd);
 
-                toReturn += subLine;
+                Result.Add(subLine);
 
-                return toReturn;
+                return Result;
             }
         }
     }

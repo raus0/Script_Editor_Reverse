@@ -47,20 +47,20 @@ namespace Script_Editor_Reverse
 
                     location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement);
+                    textEditor.Text = string.Join(Environment.NewLine, DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement));
 
                     msg = msg.Distinct().ToList();
 
                     foreach (int locationChar in msg)
                     {
-                        msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+                        msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileMSG(selectedROMPath, locationChar));
                     }
 
                     movement = movement.Distinct().ToList();
 
                     foreach (int locationMovement in movement)
                     {
-                        movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+                        movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode));
                     }
 
                     textEditor.Text += msgLine + movementLine;
@@ -82,20 +82,21 @@ namespace Script_Editor_Reverse
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement);
+            textEditor.Text = string.Join(Environment.NewLine, DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement));
 
             msg = msg.Distinct().ToList();
 
             foreach (int locationChar in msg)
             {
-                msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+                msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileMSG(selectedROMPath, locationChar));
             }
 
             movement = movement.Distinct().ToList();
 
             foreach (int locationMovement in movement)
             {
-                movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+                movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode));
+
             }
 
             textEditor.Text += msgLine + movementLine;
@@ -115,20 +116,20 @@ namespace Script_Editor_Reverse
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-            textEditor.Text = DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg, movement);
+            textEditor.Text = string.Join(Environment.NewLine, DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg, movement));
 
             msg = msg.Distinct().ToList();
 
             foreach (int locationChar in msg)
             {
-                msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+                msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileMSG(selectedROMPath, locationChar));
             }
 
             movement = movement.Distinct().ToList();
 
             foreach (int locationMovement in movement)
             {
-                movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+                movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode));
             }
 
             textEditor.Text += msgLine + movementLine;
