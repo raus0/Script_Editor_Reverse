@@ -478,7 +478,7 @@
   <node>
     <ID>4F</ID>
     <Name>applymovement</Name>
-    <Type>.hword.word</Type>
+    <Type>.hword.word.movement</Type>
   </node>
 
   <node>

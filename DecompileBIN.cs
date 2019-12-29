@@ -8,7 +8,7 @@ namespace Script_Editor_Reverse
 {
     public class DecompileBIN
     {
-        public static string DecompileCommand(string selectedROMPath, int location, List<int> list, List<int> msg)
+        public static string DecompileCommand(string selectedROMPath, int location, List<int> list, List<int> msg, List<int> movement)
         {
             //外部プロセスで開いているファイルを読み取る
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
@@ -32,6 +32,7 @@ namespace Script_Editor_Reverse
 
                 int sublocation;
                 int locationChar;
+                int locationMovement;
 
                 do
                 {
@@ -257,7 +258,7 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
                             }
 
                             toReturn += cmdLine + "\n";
@@ -310,7 +311,7 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
                             }
 
                             CommandType = endCmd;
@@ -403,7 +404,7 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                                subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
                             }
 
                             toReturn += cmdLine + "\n";
@@ -858,7 +859,7 @@ namespace Script_Editor_Reverse
                                         else
                                         {
                                             list.Add(sublocation);
-                                            subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg);
+                                            subLine += "\n" + DecompileCommand(selectedROMPath, sublocation, list, msg, movement);
                                         }
                                     }
                                     else
@@ -964,6 +965,59 @@ namespace Script_Editor_Reverse
                             locationChar = CheckOffset.Listing(location, address);
 
                             msg.Add(locationChar);
+
+                            toReturn += cmdLine + "\n";
+                            i++;
+                            break;
+
+                        case ".hword.word.movement":
+                            cmdLine = BC + " ";
+
+                            for (int h = 0; h < 2; h++)
+                            {
+                                i++;
+                                offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
+                                offset.ToUpper();
+                                cmdLine += offset;
+                            }
+
+                            k = i;
+
+                            for (int w = 0; w < 4; w++)
+                            {
+                                i++;
+                                offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
+                                offset.ToUpper();
+                                cmdLine += offset;
+                            }
+
+                            k++;
+                            j = k;
+                            address = "0x";
+                            offset = "";
+
+                            for (int w = 3; w >= 0; w--)
+                            {
+                                offset += Convert.ToString(string.Format("{0:X2}", file[location + j + w]));
+                                if (w == 3)
+                                {
+                                    offset = offset.Replace("00", "");
+                                    offset = offset.Replace("08", "");
+                                }
+                                k++;
+                            }
+                            k--;
+                            offset.ToUpper();
+
+                            address += offset;
+                            for (int z = 0; z < 5; z++)
+                            {
+                                address = address.Replace("0x0", "0x");
+                            }
+
+                            locationMovement = CheckOffset.Listing(location, address);
+
+                            movement.Add(locationMovement);
 
                             toReturn += cmdLine + "\n";
                             i++;

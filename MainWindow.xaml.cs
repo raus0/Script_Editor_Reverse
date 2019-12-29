@@ -25,6 +25,7 @@ namespace Script_Editor_Reverse
             for (int i = 1; i < Commands.Length; i++)
             {
                 string msgLine = "";
+                string movementLine = "";
 
                 if (i == 1)
                 {
@@ -37,13 +38,16 @@ namespace Script_Editor_Reverse
                 {
                     txtDecompileOffset.Text = string.Format("0x{1}", i, Commands[i]);
 
+                    string romCode = GetROMCode();
+
                     //逆コンパイル実行
                     List<int> list = new List<int>();
                     List<int> msg = new List<int>();
+                    List<int> movement = new List<int>();
 
                     location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
+                    textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement);
 
                     msg = msg.Distinct().ToList();
 
@@ -51,8 +55,15 @@ namespace Script_Editor_Reverse
                     {
                         msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
                     }
-                    
-                    textEditor.Text += msgLine;
+
+                    movement = movement.Distinct().ToList();
+
+                    foreach (int locationMovement in movement)
+                    {
+                        movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+                    }
+
+                    textEditor.Text += msgLine + movementLine;
                 }
             }
         }
@@ -60,14 +71,18 @@ namespace Script_Editor_Reverse
         private void Decompile(object sender, RoutedEventArgs e)
         {
             string msgLine = "";
+            string movementLine = "";
+
+            string romCode = GetROMCode();
 
             //逆コンパイル実行
             List<int> list = new List<int>();
             List<int> msg = new List<int>();
+            List<int> movement = new List<int>();
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg);
+            textEditor.Text = DecompileScript.DecompileCommand(selectedROMPath, location, list, msg, movement);
 
             msg = msg.Distinct().ToList();
 
@@ -76,20 +91,31 @@ namespace Script_Editor_Reverse
                 msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
             }
 
-            textEditor.Text += msgLine;
+            movement = movement.Distinct().ToList();
+
+            foreach (int locationMovement in movement)
+            {
+                movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+            }
+
+            textEditor.Text += msgLine + movementLine;
         }
 
         private void BIN(object sender, RoutedEventArgs e)
         {
             string msgLine = "";
+            string movementLine = "";
+
+            string romCode = GetROMCode();
 
             //逆コンパイル実行
             List<int> list = new List<int>();
             List<int> msg = new List<int>();
+            List<int> movement = new List<int>();
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
-            textEditor.Text = DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg);
+            textEditor.Text = DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg, movement);
 
             msg = msg.Distinct().ToList();
 
@@ -98,7 +124,14 @@ namespace Script_Editor_Reverse
                 msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
             }
 
-            textEditor.Text += msgLine;
+            movement = movement.Distinct().ToList();
+
+            foreach (int locationMovement in movement)
+            {
+                movementLine += "\n" + DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode);
+            }
+
+            textEditor.Text += msgLine + movementLine;
         }
 
         private string GetROMCode()

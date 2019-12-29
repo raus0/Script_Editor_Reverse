@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table>
+
+  <node>
+    <ID>00</ID>
+    <FRLG>lookdown</FRLG>
+    <EM>lookdown</EM>
+  </node>
+
+  <node>
+    <ID>01</ID>
+    <FRLG>lookup</FRLG>
+    <EM>lookup</EM>
+  </node>
+
+  <node>
+    <ID>02</ID>
+    <FRLG>lookleft</FRLG>
+    <EM>lookleft</EM>
+  </node>
+
+  <node>
+    <ID>03</ID>
+    <FRLG>lookright</FRLG>
+    <EM>lookright</EM>
+  </node>
+
+  <node>
+    <ID>04</ID>
+    <FRLG>mov04</FRLG>
+    <EM>walkdown(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>05</ID>
+    <FRLG>mov05</FRLG>
+    <EM>walkup(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>06</ID>
+    <FRLG>mov06</FRLG>
+    <EM>walkleft(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>07</ID>
+    <FRLG>mov07</FRLG>
+    <EM>walkright(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>08</ID>
+    <FRLG>walkdown(sp1)</FRLG>
+    <EM>walkdown(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>09</ID>
+    <FRLG>walkup(sp1)</FRLG>
+    <EM>walkup(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>0A</ID>
+    <FRLG>walkleft(sp1)</FRLG>
+    <EM>walkleft(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>0B</ID>
+    <FRLG>walkright(sp1)</FRLG>
+    <EM>walkright(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>0C</ID>
+    <FRLG>walkdown(sp2)</FRLG>
+    <EM>jumpdown2</EM>
+  </node>
+
+  <node>
+    <ID>0D</ID>
+    <FRLG>walkup(sp2)</FRLG>
+    <EM>jumpup2</EM>
+  </node>
+
+  <node>
+    <ID>0E</ID>
+    <FRLG>walkleft(sp2)</FRLG>
+    <EM>jumpleft2</EM>
+  </node>
+
+  <node>
+    <ID>0F</ID>
+    <FRLG>walkright(sp2)</FRLG>
+    <EM>jumpright2</EM>
+  </node>
+
+  <node>
+    <ID>10</ID>
+    <FRLG>walkdown(sp3)</FRLG>
+    <EM>wait(1f)</EM>
+  </node>
+
+  <node>
+    <ID>11</ID>
+    <FRLG>walkup(sp3)</FRLG>
+    <EM>wait(2f)</EM> 
+  </node>
+
+  <node>
+    <ID>12</ID>
+    <FRLG>walkleft(sp3)</FRLG>
+    <EM>wait(4f)</EM>
+  </node>
+
+  <node>
+    <ID>13</ID>
+    <FRLG>walkright(sp3)</FRLG>
+    <EM>wait(8f)</EM>
+  </node>
+
+  <node>
+    <ID>14</ID>
+    <FRLG>jumpdown2(sp3)</FRLG>
+    <EM>wait(16f)</EM>
+  </node>
+
+  <node>
+    <ID>15</ID>
+    <FRLG>jumpup2(sp3)</FRLG>
+    <EM>walkdown(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>16</ID>
+    <FRLG>jumpleft2(sp3)</FRLG>
+    <EM>walkup(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>17</ID>
+    <FRLG>jumpright2(sp3)</FRLG>
+    <EM>walkleft(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>18</ID>
+    <FRLG>wait(1f)</FRLG>
+    <EM>walkright(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>19</ID>
+    <FRLG>wait(2f)</FRLG>
+    <EM>stepdown(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>1A</ID>
+    <FRLG>wait(4f)</FRLG>
+    <EM>stepup(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>1B</ID>
+    <FRLG>wait(8f)</FRLG>
+    <EM>stepleft(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>1C</ID>
+    <FRLG>wait(16f)</FRLG>
+    <EM>stepright(sp1)</EM>
+  </node>
+
+  <node>
+    <ID>1D</ID>
+    <FRLG>walkdown(sp5)</FRLG>
+    <EM>stepdown(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>1E</ID>
+    <FRLG>walkup(sp5)</FRLG>
+    <EM>stepup(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>1F</ID>
+    <FRLG>walkleft(sp5)</FRLG>
+    <EM>stepleft(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>20</ID>
+    <FRLG>walkright(sp5)</FRLG>
+    <EM>stepright(sp2)</EM>
+  </node>
+
+  <node>
+    <ID>21</ID>
+    <FRLG>stepdown(low)</FRLG>
+    <EM>stepdown(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>22</ID>
+    <FRLG>stepup(low)</FRLG>
+    <EM>stepup(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>23</ID>
+    <FRLG>stepleft(low)</FRLG>
+    <EM>stepleft(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>24</ID>
+    <FRLG>stepright(low)</FRLG>
+    <EM>stepright(sp3)</EM>
+  </node>
+
+  <node>
+    <ID>25</ID>
+    <FRLG>stepdown(middle)</FRLG>
+    <EM>stepdown(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>26</ID>
+    <FRLG>stepup(middle)</FRLG>
+    <EM>stepup(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>27</ID>
+    <FRLG>stepleft(middle)</FRLG>
+    <EM>stepleft(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>28</ID>
+    <FRLG>stepright(middle)</FRLG>
+    <EM>stepright(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>29</ID>
+    <FRLG>stepdown(high)</FRLG>
+    <EM>walkdown(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>2A</ID>
+    <FRLG>stepup(high)</FRLG>
+    <EM>walkup(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>2B</ID>
+    <FRLG>stepleft(high)</FRLG>
+    <EM>walkleft(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>2C</ID>
+    <FRLG>stepright(high)</FRLG>
+    <EM>walkright(sp4)</EM>
+  </node>
+
+  <node>
+    <ID>2D</ID>
+    <FRLG>stepdown(highest)</FRLG>
+    <EM>walkdown(sp5)</EM>
+  </node>
+
+  <node>
+    <ID>2E</ID>
+    <FRLG>stepup(highest)</FRLG>
+    <EM>walkup(sp5)</EM>
+  </node>
+
+  <node>
+    <ID>2F</ID>
+    <FRLG>stepleft(highest)</FRLG>
+    <EM>walkleft(sp5)</EM>
+  </node>
+
+  <node>
+    <ID>30</ID>
+    <FRLG>stepright(highest)</FRLG>
+    <EM>walkright(sp5)</EM>
+  </node>
+
+  <node>
+    <ID>31</ID>
+    <FRLG>walkdown(sp6)</FRLG>
+    <EM>walkdown(sp6)</EM>
+  </node>
+
+  <node>
+    <ID>32</ID>
+    <FRLG>walkup(sp6)</FRLG>
+    <EM>walkup(sp6)</EM>
+  </node>
+
+  <node>
+    <ID>33</ID>
+    <FRLG>walkleft(sp6)</FRLG>
+    <EM>walkleft(sp6)</EM>
+  </node>
+
+  <node>
+    <ID>34</ID>
+    <FRLG>walkright(sp6)</FRLG>
+    <EM>walkright(sp6)</EM>
+  </node>
+
+  <node>
+    <ID>35</ID>
+    <FRLG>walkdown(sp7)</FRLG>
+    <EM>rundown</EM>
+  </node>
+
+  <node>
+    <ID>36</ID>
+    <FRLG>walkup(sp7)</FRLG>
+    <EM>runup</EM>
+  </node>
+
+  <node>
+    <ID>37</ID>
+    <FRLG>walkleft(sp7)</FRLG>
+    <EM>runleft</EM>
+  </node>
+
+  <node>
+    <ID>38</ID>
+    <FRLG>walkright(sp7)</FRLG>
+    <EM>runright</EM>
+  </node>
+
+  <node>
+    <ID>39</ID>
+    <FRLG>movedown(sp8)</FRLG>
+    <EM>step</EM>
+  </node>
+
+  <node>
+    <ID>3A</ID>
+    <FRLG>moveup(sp8)</FRLG>
+    <EM>surfdown</EM>
+  </node>
+
+  <node>
+    <ID>3B</ID>
+    <FRLG>moveleft(sp8)</FRLG>
+    <EM>surfup</EM>
+  </node>
+
+  <node>
+    <ID>3C</ID>
+    <FRLG>moveright(sp8)</FRLG>
+    <EM>surfleft</EM>
+  </node>
+
+  <node>
+    <ID>3D</ID>
+    <FRLG>rundown(sp5)</FRLG>
+    <EM>surfright</EM>
+  </node>
+
+  <node>
+    <ID>3E</ID>
+    <FRLG>runup(sp5)</FRLG>
+    <EM>mov3E</EM>
+  </node>
+
+  <node>
+    <ID>3F</ID>
+    <FRLG>runleft(sp5)</FRLG>
+    <EM>turnaway</EM>
+  </node>
+
+  <node>
+    <ID>40</ID>
+    <FRLG>runright(sp5)</FRLG>
+    <EM>lock</EM>
+  </node>
+
+  <node>
+    <ID>41</ID>
+    <FRLG>rundown(sp4)</FRLG>
+    <EM>release</EM>
+  </node>
+
+  <node>
+    <ID>42</ID>
+    <FRLG>runup(sp4)</FRLG>
+    <EM>surfenddown</EM>
+  </node>
+
+  <node>
+    <ID>43</ID>
+    <FRLG>runleft(sp4)</FRLG>
+    <EM>surfendup</EM>
+  </node>
+
+  <node>
+    <ID>44</ID>
+    <FRLG>runright(sp4)</FRLG>
+    <EM>surfendleft</EM>
+  </node>
+
+  <node>
+    <ID>45</ID>
+    <FRLG>useaction</FRLG>
+    <EM>surfendright</EM>
+  </node>
+
+  <node>
+    <ID>46</ID>
+    <FRLG>surfdown</FRLG>
+    <EM>hopdown</EM>
+  </node>
+
+  <node>
+    <ID>47</ID>
+    <FRLG>surfup</FRLG>
+    <EM>hopup</EM>
+  </node>
+
+  <node>
+    <ID>48</ID>
+    <FRLG>surfleft</FRLG>
+    <EM>hopleft</EM>
+  </node>
+
+  <node>
+    <ID>49</ID>
+    <FRLG>surfright</FRLG>
+    <EM>hopright</EM>
+  </node>
+
+  <node>
+    <ID>4A</ID>
+    <FRLG>faceplayer</FRLG>
+    <EM>jumplookup</EM>
+  </node>
+
+  <node>
+    <ID>4B</ID>
+    <FRLG>turnaway</FRLG>
+    <EM>jumplookdown</EM>
+  </node>
+
+  <node>
+    <ID>4C</ID>
+    <FRLG>lock</FRLG>
+    <EM>jumplookright</EM>
+  </node>
+
+  <node>
+    <ID>4D</ID>
+    <FRLG>release</FRLG>
+    <EM>jumplookleft</EM>
+  </node>
+
+  <node>
+    <ID>4E</ID>
+    <FRLG>jumpdown(sp3)</FRLG>
+    <EM>mov4E</EM>
+  </node>
+
+  <node>
+    <ID>4F</ID>
+    <FRLG>jumpup(sp3)</FRLG>
+    <EM>mov4F</EM>
+  </node>
+
+  <node>
+    <ID>50</ID>
+    <FRLG>jumpleft(sp3)</FRLG>
+    <EM>mov50</EM>
+  </node>
+
+  <node>
+    <ID>51</ID>
+    <FRLG>jumpright(sp3)</FRLG>
+    <EM>mov51</EM>
+  </node>
+
+  <node>
+    <ID>52</ID>
+    <FRLG>hopdown</FRLG>
+    <EM>mov52</EM>
+  </node>
+
+  <node>
+    <ID>53</ID>
+    <FRLG>hopup</FRLG>
+    <EM>mov53</EM>
+  </node>
+
+  <node>
+    <ID>54</ID>
+    <FRLG>hopleft</FRLG>
+    <EM>hide</EM>
+  </node>
+
+  <node>
+    <ID>55</ID>
+    <FRLG>hopright</FRLG>
+    <EM>appear</EM>
+  </node>
+
+  <node>
+    <ID>56</ID>
+    <FRLG>hopdownup</FRLG>
+    <EM>!</EM>
+  </node>
+
+  <node>
+    <ID>57</ID>
+    <FRLG>hopupdown</FRLG>
+    <EM>?</EM>
+  </node>
+
+  <node>
+    <ID>58</ID>
+    <FRLG>hopleftright</FRLG>
+    <EM>heart</EM>
+  </node>
+
+  <node>
+    <ID>59</ID>
+    <FRLG>hoprightleft</FRLG>
+    <EM>mov59</EM>
+  </node>
+
+  <node>
+    <ID>5A</ID>
+    <FRLG>default</FRLG>
+    <EM>mov5A</EM>
+  </node>
+
+  <node>
+    <ID>5B</ID>
+    <FRLG>bow</FRLG>
+    <EM>mov5B</EM>
+  </node>
+
+  <node>
+    <ID>5C</ID>
+    <FRLG>mov5C</FRLG>
+    <EM>mov5C</EM>
+  </node>
+
+  <node>
+    <ID>5D</ID>
+    <FRLG>mov5D</FRLG>
+    <EM>mov5D</EM>
+  </node>
+
+  <node>
+    <ID>5E</ID>
+    <FRLG>mov5E</FRLG>
+    <EM>mov5E</EM>
+  </node>
+
+  <node>
+    <ID>5F</ID>
+    <FRLG>mov5F</FRLG>
+    <EM>mov5F</EM>
+  </node>
+
+  <node>
+    <ID>60</ID>
+    <FRLG>hide</FRLG>
+    <EM>mov60</EM>
+  </node>
+
+  <node>
+    <ID>61</ID>
+    <FRLG>appear</FRLG>
+    <EM>mov61</EM>
+  </node>
+
+  <node>
+    <ID>62</ID>
+    <FRLG>!</FRLG>
+    <EM>mov62</EM>
+  </node>
+
+  <node>
+    <ID>63</ID>
+    <FRLG>?</FRLG>
+    <EM>mov63</EM>
+  </node>
+
+  <node>
+    <ID>64</ID>
+    <FRLG>×</FRLG>
+    <EM>mov64</EM>
+  </node>
+
+  <node>
+    <ID>65</ID>
+    <FRLG>!!</FRLG>
+    <EM>mov65</EM>
+  </node>
+
+  <node>
+    <ID>66</ID>
+    <FRLG>^v^</FRLG>
+    <EM>mov66</EM>
+  </node>
+
+  <node>
+    <ID>67</ID>
+    <FRLG>mov67</FRLG>
+    <EM>mov67</EM>
+  </node>
+
+  <node>
+    <ID>68</ID>
+    <FRLG>rocksmash</FRLG>
+    <EM>mov68</EM>
+  </node>
+
+  <node>
+    <ID>69</ID>
+    <FRLG>cut</FRLG>
+    <EM>mov69</EM>
+  </node>
+
+  <node>
+    <ID>6A</ID>
+    <FRLG>mov6A</FRLG>
+    <EM>mov6A</EM>
+  </node>
+
+  <node>
+    <ID>6B</ID>
+    <FRLG>mov6B</FRLG>
+    <EM>mov6B</EM>
+  </node>
+
+  <node>
+    <ID>6C</ID>
+    <FRLG>mov6C</FRLG>
+    <EM>mov6C</EM>
+  </node>
+
+  <node>
+    <ID>6D</ID>
+    <FRLG>mov6D</FRLG>
+    <EM>mov6D</EM>
+  </node>
+
+  <node>
+    <ID>6E</ID>
+    <FRLG>mov6E</FRLG>
+    <EM>mov6E</EM>
+  </node>
+
+  <node>
+    <ID>6F</ID>
+    <FRLG>mov6F</FRLG>
+    <EM>mov6F</EM>
+  </node>
+
+  <node>
+    <ID>70</ID>
+    <FRLG>mov70</FRLG>
+    <EM>mov70</EM>
+  </node>
+
+  <node>
+    <ID>71</ID>
+    <FRLG>mov71</FRLG>
+    <EM>mov71</EM>
+  </node>
+
+  <node>
+    <ID>72</ID>
+    <FRLG>mov72</FRLG>
+    <EM>mov72</EM>
+  </node>
+
+  <node>
+    <ID>73</ID>
+    <FRLG>mov73</FRLG>
+    <EM>mov73</EM>
+  </node>
+
+  <node>
+    <ID>74</ID>
+    <FRLG>mov74</FRLG>
+    <EM>mov74</EM>
+  </node>
+
+  <node>
+    <ID>75</ID>
+    <FRLG>mov75</FRLG>
+    <EM>mov75</EM>
+  </node>
+
+  <node>
+    <ID>76</ID>
+    <FRLG>mov76</FRLG>
+    <EM>mov76</EM>
+  </node>
+
+  <node>
+    <ID>77</ID>
+    <FRLG>mov77</FRLG>
+    <EM>mov77</EM>
+  </node>
+
+  <node>
+    <ID>78</ID>
+    <FRLG>mov78</FRLG>
+    <EM>mov78</EM>
+  </node>
+
+  <node>
+    <ID>79</ID>
+    <FRLG>mov79</FRLG>
+    <EM>mov79</EM>
+  </node>
+
+  <node>
+    <ID>7A</ID>
+    <FRLG>mov7A</FRLG>
+    <EM>mov7A</EM>
+  </node>
+
+  <node>
+    <ID>7B</ID>
+    <FRLG>mov7B</FRLG>
+    <EM>mov7B</EM>
+  </node>
+
+  <node>
+    <ID>7C</ID>
+    <FRLG>mov7C</FRLG>
+    <EM>mov7C</EM>
+  </node>
+
+  <node>
+    <ID>7D</ID>
+    <FRLG>mov7D</FRLG>
+    <EM>mov7D</EM>
+  </node>
+
+  <node>
+    <ID>7E</ID>
+    <FRLG>mov7E</FRLG>
+    <EM>mov7E</EM>
+  </node>
+
+  <node>
+    <ID>7F</ID>
+    <FRLG>mov7F</FRLG>
+    <EM>mov7F</EM>
+  </node>
+
+  <node>
+    <ID>80</ID>
+    <FRLG>mov80</FRLG>
+    <EM>mov80</EM>
+  </node>
+
+  <node>
+    <ID>81</ID>
+    <FRLG>mov81</FRLG>
+    <EM>mov81</EM>
+  </node>
+
+  <node>
+    <ID>82</ID>
+    <FRLG>mov82</FRLG>
+    <EM>mov82</EM>
+  </node>
+
+  <node>
+    <ID>83</ID>
+    <FRLG>mov83</FRLG>
+    <EM>mov83</EM>
+  </node>
+
+  <node>
+    <ID>84</ID>
+    <FRLG>mov84</FRLG>
+    <EM>mov84</EM>
+  </node>
+
+  <node>
+    <ID>85</ID>
+    <FRLG>mov85</FRLG>
+    <EM>mov85</EM>
+  </node>
+
+  <node>
+    <ID>86</ID>
+    <FRLG>mov86</FRLG>
+    <EM>moveleft</EM>
+  </node>
+
+  <node>
+    <ID>87</ID>
+    <FRLG>mov87</FRLG>
+    <EM>moveright</EM>
+  </node>
+
+  <node>
+    <ID>88</ID>
+    <FRLG>mov88</FRLG>
+    <EM>movedown</EM>
+  </node>
+
+  <node>
+    <ID>89</ID>
+    <FRLG>mov89</FRLG>
+    <EM>moveup</EM>
+  </node>
+
+  <node>
+    <ID>8A</ID>
+    <FRLG>mov8A</FRLG>
+    <EM>mov8A</EM>
+  </node>
+
+  <node>
+    <ID>8B</ID>
+    <FRLG>mov8B</FRLG>
+    <EM>mov8B</EM>
+  </node>
+
+  <node>
+    <ID>8C</ID>
+    <FRLG>mov8C</FRLG>
+    <EM>moveleftup</EM>
+  </node>
+
+  <node>
+    <ID>8D</ID>
+    <FRLG>mov8D</FRLG>
+    <EM>moverightup</EM>
+  </node>
+
+  <node>
+    <ID>8E</ID>
+    <FRLG>mov8E</FRLG>
+    <EM>moveleftdown</EM>
+  </node>
+
+  <node>
+    <ID>8F</ID>
+    <FRLG>mov8F</FRLG>
+    <EM>moverightdown</EM>
+  </node>
+
+  <node>
+    <ID>90</ID>
+    <FRLG>mov90</FRLG>
+    <EM>walkleftup</EM>
+  </node>
+
+  <node>
+    <ID>91</ID>
+    <FRLG>mov91</FRLG>
+    <EM>moverightup</EM>
+  </node>
+
+  <node>
+    <ID>92</ID>
+    <FRLG>mov92</FRLG>
+    <EM>moveleftdown</EM>
+  </node>
+
+  <node>
+    <ID>93</ID>
+    <FRLG>mov93</FRLG>
+    <EM>moverightdown</EM>
+  </node>
+
+  <node>
+    <ID>94</ID>
+    <FRLG>spindown</FRLG>
+    <EM>mov94</EM>
+  </node>
+
+  <node>
+    <ID>95</ID>
+    <FRLG>spinup</FRLG>
+    <EM>mov95</EM>
+  </node>
+
+  <node>
+    <ID>96</ID>
+    <FRLG>spinleft</FRLG>
+    <EM>mov96</EM>
+  </node>
+
+  <node>
+    <ID>97</ID>
+    <FRLG>spinright</FRLG>
+    <EM>mov97</EM>
+  </node>
+
+  <node>
+    <ID>98</ID>
+    <FRLG>seekernormal</FRLG>
+    <EM>mov98</EM>
+  </node>
+
+  <node>
+    <ID>99</ID>
+    <FRLG>seekerjump</FRLG>
+    <EM>mov99</EM>
+  </node>
+
+  <node>
+    <ID>9A</ID>
+    <FRLG>seekerswim</FRLG>
+    <EM>mov9A</EM>
+  </node>
+
+  <node>
+    <ID>9B</ID>
+    <FRLG>walkdown(lowest)</FRLG>
+    <EM>mov9B</EM>
+  </node>
+
+  <node>
+    <ID>9C</ID>
+    <FRLG>walkup(lowest)</FRLG>
+    <EM>mov9C</EM>
+  </node>
+
+  <node>
+    <ID>9D</ID>
+    <FRLG>walkleft(lowest)</FRLG>
+    <EM>mov9D</EM>
+  </node>
+
+  <node>
+    <ID>9E</ID>
+    <FRLG>walkright(lowest)</FRLG>
+    <EM>mov9E</EM>
+  </node>
+
+  <node>
+    <ID>9F</ID>
+    <FRLG>mov9F</FRLG>
+    <EM>mov9F</EM>
+  </node>
+
+  <node>
+    <ID>A0</ID>
+    <FRLG>movedown(sp5)</FRLG>
+    <EM>movA0</EM>
+  </node>
+
+  <node>
+    <ID>A1</ID>
+    <FRLG>moveup(sp5)</FRLG>
+    <EM>movA1</EM>
+  </node>
+
+  <node>
+    <ID>A2</ID>
+    <FRLG>moveleft(sp5)</FRLG>
+    <EM>movA2</EM>
+  </node>
+
+  <node>
+    <ID>A3</ID>
+    <FRLG>moveright(sp5)</FRLG>
+    <EM>movA3</EM>
+  </node>
+
+  <node>
+    <ID>A4</ID>
+    <FRLG>riseup</FRLG>
+    <EM>movA4</EM>
+  </node>
+
+  <node>
+    <ID>A5</ID>
+    <FRLG>falldown</FRLG>
+    <EM>movA5</EM>
+  </node>
+
+  <node>
+    <ID>A6</ID>
+    <FRLG>surfenddown</FRLG>
+    <EM>movA6</EM>
+  </node>
+
+  <node>
+    <ID>A7</ID>
+    <FRLG>surfendup</FRLG>
+    <EM>movA7</EM>
+  </node>
+
+  <node>
+    <ID>A8</ID>
+    <FRLG>surfendleft</FRLG>
+    <EM>movA8</EM>
+  </node>
+
+  <node>
+    <ID>A9</ID>
+    <FRLG>surfendright</FRLG>
+    <EM>movA9</EM>
+  </node>
+
+  <node>
+    <ID>AA</ID>
+    <FRLG>backmoveup(sp1)</FRLG>
+    <EM>movAA</EM>
+  </node>
+
+  <node>
+    <ID>AB</ID>
+    <FRLG>backmovedown(sp1)</FRLG>
+    <EM>movAB</EM>
+  </node>
+
+  <node>
+    <ID>AC</ID>
+    <FRLG>backmoveright(sp1)</FRLG>
+    <EM>movAC</EM>
+  </node>
+
+  <node>
+    <ID>AD</ID>
+    <FRLG>backmoveleft(sp1)</FRLG>
+    <EM>movAD</EM>
+  </node>
+
+  <node>
+    <ID>AE</ID>
+    <FRLG>backmoveup(sp2)</FRLG>
+    <EM>movAE</EM>
+  </node>
+
+  <node>
+    <ID>AF</ID>
+    <FRLG>backmovedown(sp2)</FRLG>
+    <EM>movAF</EM>
+  </node>
+
+  <node>
+    <ID>B0</ID>
+    <FRLG>backmoveright(sp2)</FRLG>
+    <EM>movB0</EM>
+  </node>
+
+  <node>
+    <ID>B1</ID>
+    <FRLG>backmoveleft(sp2)</FRLG>
+    <EM>movB1</EM>
+  </node>
+
+  <node>
+    <ID>B2</ID>
+    <FRLG>backmoveup(sp3)</FRLG>
+    <EM>movB2</EM>
+  </node>
+
+  <node>
+    <ID>B3</ID>
+    <FRLG>backmovedown(sp3)</FRLG>
+    <EM>movB3</EM>
+  </node>
+
+  <node>
+    <ID>B4</ID>
+    <FRLG>backmoveright(sp3)</FRLG>
+    <EM>movB4</EM>
+  </node>
+
+  <node>
+    <ID>B5</ID>
+    <FRLG>backmoveleft(sp3)</FRLG>
+    <EM>movB5</EM>
+  </node>
+
+  <node>
+    <ID>B6</ID>
+    <FRLG>backmoveup(sp4)</FRLG>
+    <EM>movB6</EM>
+  </node>
+
+  <node>
+    <ID>B7</ID>
+    <FRLG>backmovedown(sp4)</FRLG>
+    <EM>movB7</EM>
+  </node>
+
+  <node>
+    <ID>B8</ID>
+    <FRLG>backmoveright(sp4)</FRLG>
+    <EM>movB8</EM>
+  </node>
+
+  <node>
+    <ID>B9</ID>
+    <FRLG>backmoveleft(sp4)</FRLG>
+    <EM>movB9</EM>
+  </node>
+
+  <node>
+    <ID>BA</ID>
+    <FRLG>backjumpup2</FRLG>
+    <EM>movBA</EM>
+  </node>
+
+  <node>
+    <ID>BB</ID>
+    <FRLG>backjumpdown2</FRLG>
+    <EM>movBB</EM>
+  </node>
+
+  <node>
+    <ID>BC</ID>
+    <FRLG>backjumpright2</FRLG>
+    <EM>movBC</EM>
+  </node>
+
+  <node>
+    <ID>BD</ID>
+    <FRLG>backjumpleft2</FRLG>
+    <EM>movBD</EM>
+  </node>
+
+  <node>
+    <ID>BE</ID>
+    <FRLG>backjumpup</FRLG>
+    <EM>movBE</EM>
+  </node>
+
+  <node>
+    <ID>BF</ID>
+    <FRLG>backjumpdown</FRLG>
+    <EM>movBF</EM>
+  </node>
+
+  <node>
+    <ID>C0</ID>
+    <FRLG>backjumpright</FRLG>
+    <EM>movC0</EM>
+  </node>
+
+  <node>
+    <ID>C1</ID>
+    <FRLG>backjumpleft</FRLG>
+    <EM>movC1</EM>
+  </node>
+
+  <node>
+    <ID>C2</ID>
+    <FRLG>downleftdown</FRLG>
+    <EM>movC2</EM>
+  </node>
+
+  <node>
+    <ID>C3</ID>
+    <FRLG>upleftup</FRLG>
+    <EM>movC3</EM>
+  </node>
+
+  <node>
+    <ID>C4</ID>
+    <FRLG>leftleftdown</FRLG>
+    <EM>movC4</EM>
+  </node>
+
+  <node>
+    <ID>C5</ID>
+    <FRLG>rightrightdown</FRLG>
+    <EM>movC5</EM>
+  </node>
+
+  <node>
+    <ID>C6</ID>
+    <FRLG>downrightdown</FRLG>
+    <EM>movC6</EM>
+  </node>
+
+  <node>
+    <ID>C7</ID>
+    <FRLG>uprightup</FRLG>
+    <EM>movC7</EM>
+  </node>
+
+  <node>
+    <ID>C8</ID>
+    <FRLG>leftleftup</FRLG>
+    <EM>movC8</EM>
+  </node>
+
+  <node>
+    <ID>C9</ID>
+    <FRLG>rightrightup</FRLG>
+    <EM>movC9</EM>
+  </node>
+
+  <node>
+    <ID>CA</ID>
+    <FRLG>movCA</FRLG>
+    <EM>movCA</EM>
+  </node>
+
+  <node>
+    <ID>CB</ID>
+    <FRLG>movCB</FRLG>
+    <EM>movCB</EM>
+  </node>
+
+  <node>
+    <ID>CC</ID>
+    <FRLG>movCC</FRLG>
+    <EM>movCC</EM>
+  </node>
+
+  <node>
+    <ID>CD</ID>
+    <FRLG>movCD</FRLG>
+    <EM>movCD</EM>
+  </node>
+
+  <node>
+    <ID>CE</ID>
+    <FRLG>movCE</FRLG>
+    <EM>movCE</EM>
+  </node>
+
+  <node>
+    <ID>CF</ID>
+    <FRLG>movCF</FRLG>
+    <EM>movCF</EM>
+  </node>
+
+  <node>
+    <ID>D0</ID>
+    <FRLG>movD0</FRLG>
+    <EM>movD0</EM>
+  </node>
+
+  <node>
+    <ID>D1</ID>
+    <FRLG>movD1</FRLG>
+    <EM>movD1</EM>
+  </node>
+
+  <node>
+    <ID>D2</ID>
+    <FRLG>movD2</FRLG>
+    <EM>movD2</EM>
+  </node>
+
+  <node>
+    <ID>D3</ID>
+    <FRLG>movD3</FRLG>
+    <EM>movD3</EM>
+  </node>
+
+  <node>
+    <ID>D4</ID>
+    <FRLG>movD4</FRLG>
+    <EM>movD4</EM>
+  </node>
+
+  <node>
+    <ID>D5</ID>
+    <FRLG>movD5</FRLG>
+    <EM>movD5</EM>
+  </node>
+
+  <node>
+    <ID>D6</ID>
+    <FRLG>movD6</FRLG>
+    <EM>movD6</EM>
+  </node>
+
+  <node>
+    <ID>D7</ID>
+    <FRLG>movD7</FRLG>
+    <EM>movD7</EM>
+  </node>
+
+  <node>
+    <ID>D8</ID>
+    <FRLG>movD8</FRLG>
+    <EM>movD8</EM>
+  </node>
+
+  <node>
+    <ID>D9</ID>
+    <FRLG>movD9</FRLG>
+    <EM>movD9</EM>
+  </node>
+
+  <node>
+    <ID>DA</ID>
+    <FRLG>movDA</FRLG>
+    <EM>movDA</EM>
+  </node>
+
+  <node>
+    <ID>DB</ID>
+    <FRLG>movDB</FRLG>
+    <EM>movDB</EM>
+  </node>
+
+  <node>
+    <ID>DC</ID>
+    <FRLG>movDC</FRLG>
+    <EM>movDC</EM>
+  </node>
+
+  <node>
+    <ID>DD</ID>
+    <FRLG>movDD</FRLG>
+    <EM>movDD</EM>
+  </node>
+
+  <node>
+    <ID>DE</ID>
+    <FRLG>movDE</FRLG>
+    <EM>movDE</EM>
+  </node>
+
+  <node>
+    <ID>DF</ID>
+    <FRLG>movDF</FRLG>
+    <EM>movDF</EM>
+  </node>
+
+  <node>
+    <ID>E0</ID>
+    <FRLG>movE0</FRLG>
+    <EM>movE0</EM>
+  </node>
+
+  <node>
+    <ID>E1</ID>
+    <FRLG>movE1</FRLG>
+    <EM>movE1</EM>
+  </node>
+
+  <node>
+    <ID>E2</ID>
+    <FRLG>movE2</FRLG>
+    <EM>movE2</EM>
+  </node>
+
+  <node>
+    <ID>E3</ID>
+    <FRLG>movE3</FRLG>
+    <EM>movE3</EM>
+  </node>
+
+  <node>
+    <ID>E4</ID>
+    <FRLG>movE4</FRLG>
+    <EM>movE4</EM>
+  </node>
+
+  <node>
+    <ID>E5</ID>
+    <FRLG>movE5</FRLG>
+    <EM>movE5</EM>
+  </node>
+
+  <node>
+    <ID>E6</ID>
+    <FRLG>movE6</FRLG>
+    <EM>movE6</EM>
+  </node>
+
+  <node>
+    <ID>E7</ID>
+    <FRLG>movE7</FRLG>
+    <EM>movE7</EM>
+  </node>
+
+  <node>
+    <ID>E8</ID>
+    <FRLG>movE8</FRLG>
+    <EM>movE8</EM>
+  </node>
+
+  <node>
+    <ID>E9</ID>
+    <FRLG>movE9</FRLG>
+    <EM>movE9</EM>
+  </node>
+
+  <node>
+    <ID>EA</ID>
+    <FRLG>movEA</FRLG>
+    <EM>movEA</EM>
+  </node>
+
+  <node>
+    <ID>EB</ID>
+    <FRLG>movEB</FRLG>
+    <EM>movEB</EM>
+  </node>
+
+  <node>
+    <ID>EC</ID>
+    <FRLG>movEC</FRLG>
+    <EM>movEC</EM>
+  </node>
+
+  <node>
+    <ID>ED</ID>
+    <FRLG>movED</FRLG>
+    <EM>movED</EM>
+  </node>
+
+  <node>
+    <ID>EE</ID>
+    <FRLG>movEE</FRLG>
+    <EM>movEE</EM>
+  </node>
+
+  <node>
+    <ID>EF</ID>
+    <FRLG>movEF</FRLG>
+    <EM>movEF</EM>
+  </node>
+
+  <node>
+    <ID>F0</ID>
+    <FRLG>movF0</FRLG>
+    <EM>movF0</EM>
+  </node>
+
+  <node>
+    <ID>F1</ID>
+    <FRLG>movF1</FRLG>
+    <EM>movF1</EM>
+  </node>
+
+  <node>
+    <ID>F2</ID>
+    <FRLG>movF2</FRLG>
+    <EM>movF2</EM>
+  </node>
+
+  <node>
+    <ID>F3</ID>
+    <FRLG>movF3</FRLG>
+    <EM>movF3</EM>
+  </node>
+
+  <node>
+    <ID>F4</ID>
+    <FRLG>movF4</FRLG>
+    <EM>movF4</EM>
+  </node>
+
+  <node>
+    <ID>F5</ID>
+    <FRLG>movF5</FRLG>
+    <EM>movF5</EM>
+  </node>
+
+  <node>
+    <ID>F6</ID>
+    <FRLG>movF6</FRLG>
+    <EM>movF6</EM>
+  </node>
+
+  <node>
+    <ID>F7</ID>
+    <FRLG>movF7</FRLG>
+    <EM>movF7</EM>
+  </node>
+
+  <node>
+    <ID>F8</ID>
+    <FRLG>movF8</FRLG>
+    <EM>movF8</EM>
+  </node>
+
+  <node>
+    <ID>F9</ID>
+    <FRLG>movF9</FRLG>
+    <EM>movF9</EM>
+  </node>
+
+  <node>
+    <ID>FA</ID>
+    <FRLG>movFA</FRLG>
+    <EM>movFA</EM>
+  </node>
+
+  <node>
+    <ID>FB</ID>
+    <FRLG>movFB</FRLG>
+    <EM>movFB</EM>
+  </node>
+
+  <node>
+    <ID>FC</ID>
+    <FRLG>movFC</FRLG>
+    <EM>movFC</EM>
+  </node>
+
+  <node>
+    <ID>FD</ID>
+    <FRLG>movFD</FRLG>
+    <EM>movFD</EM>
+  </node>
+
+  <node>
+    <ID>FE</ID>
+    <FRLG>end</FRLG>
+    <EM>movFE</EM>
+  </node>
+
+  <node>
+    <ID>FF</ID>
+    <FRLG>freespace</FRLG>
+  </node>
+</table>

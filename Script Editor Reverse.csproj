@@ -71,6 +71,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CheckOffset.cs" />
+    <Compile Include="DecompileMovement.cs" />
     <Compile Include="DecompileBIN.cs" />
     <Compile Include="DecompileChar.cs" />
     <Compile Include="DecompileScript.cs" />
@@ -116,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="command.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="movement.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
