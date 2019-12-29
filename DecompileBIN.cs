@@ -25,7 +25,7 @@ namespace Script_Editor_Reverse
                 string BC = "";
                 string CommandType = "";
 
-                Result.Add("#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)));
+                Result.Add("#org 0x" + Convert.ToString(string.Format("{0:X6}", location)));
 
                 int i = 0;
                 int j = 0;

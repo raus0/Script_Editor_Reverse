@@ -58,7 +58,7 @@ namespace Script_Editor_Reverse
                                 }
                                 else if (romCode == "BPEJ" || romCode == "BPEE")
                                 {
-                                    Result.Add(resultbuffer + movement.Element("Em").Value);
+                                    Result.Add(resultbuffer + movement.Element("EM").Value);
                                     resultbuffer = "";
                                 }
                                 else
@@ -77,6 +77,8 @@ namespace Script_Editor_Reverse
                     }
                 }
                 while (m != endMovement);
+
+                Result.Add("");
 
                 return Result;
             }
