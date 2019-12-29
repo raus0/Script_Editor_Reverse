@@ -28,14 +28,8 @@ namespace Script_Editor_Reverse
 
                     switch (m)
                     {
-                        case "ab":
-                            m = m.Replace("ab", "！");
-                            toReturn += m;
-                            t++;
-                            break;
-
-                        case "ac":
-                            m = m.Replace("ac", "？");
+                        case "00":
+                            m = m.Replace("00", " ");
                             toReturn += m;
                             t++;
                             break;
