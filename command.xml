@@ -4,13 +4,13 @@
   <node>
     <ID>00</ID>
     <Name>nop</Name>
-    <Type>.endm</Type>
+    <Type>.void</Type>
   </node>
 
   <node>
     <ID>01</ID>
     <Name>nop1</Name>
-    <Type>.endm</Type>
+    <Type>.void</Type>
   </node>
 
   <node>
@@ -502,7 +502,6 @@
   <node>
     <ID>53</ID>
     <Name>deleteobject</Name>
-    <ID>53</ID>
     <Type>.hword</Type>
   </node>
 
@@ -515,7 +514,6 @@
   <node>
     <ID>55</ID>
     <Name>showobject</Name>
-    <ID>53</ID>
     <Type>.hword</Type>
   </node>
 
@@ -624,7 +622,7 @@
   <node>
     <ID>67</ID>
     <Name>msg</Name>
-    <Type>.word</Type>
+    <Type>.word.msg</Type>
   </node>
 
   <node>

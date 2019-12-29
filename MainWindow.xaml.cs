@@ -79,6 +79,28 @@ namespace Script_Editor_Reverse
             textEditor.Text += msgLine;
         }
 
+        private void BIN(object sender, RoutedEventArgs e)
+        {
+            string msgLine = "";
+
+            //逆コンパイル実行
+            List<int> list = new List<int>();
+            List<int> msg = new List<int>();
+
+            location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+            textEditor.Text = DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg);
+
+            msg = msg.Distinct().ToList();
+
+            foreach (int locationChar in msg)
+            {
+                msgLine += "\n" + DecompileChar.DecompileMSG(selectedROMPath, locationChar);
+            }
+
+            textEditor.Text += msgLine;
+        }
+
         private string GetROMCode()
         {
             using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))

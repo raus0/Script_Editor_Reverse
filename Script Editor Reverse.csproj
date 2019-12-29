@@ -71,6 +71,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CheckOffset.cs" />
+    <Compile Include="DecompileBIN.cs" />
     <Compile Include="DecompileChar.cs" />
     <Compile Include="DecompileScript.cs" />
     <Compile Include="MainWindow.xaml.cs">
