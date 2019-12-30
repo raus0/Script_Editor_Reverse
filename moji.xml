@@ -1547,6 +1547,11 @@
   </node>
 
   <node>
+    <ID>f1</ID>
+    <moji>人</moji>
+  </node>
+  
+  <node>
     <ID>f2</ID>
     <moji>形</moji>
   </node>
