@@ -87,7 +87,7 @@ namespace Script_Editor_Reverse
                             o = Convert.ToString(string.Format("{0:x2}", file[location + t]));
                             m += " " + o;
 
-                            if (n != "04" || n != "0b" || n != "10")
+                            if (n != "04" && n != "0b" && n != "10")
                             {
                                 var fcAB = (
                                     from b in mojixml.Elements("node")
