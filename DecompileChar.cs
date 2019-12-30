@@ -17,6 +17,11 @@ namespace Script_Editor_Reverse
 
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
                 string m;
+                string n;
+                string o;
+                string p;
+                string q;
+
                 string endChar = "Ω";
 
                 Result.Add("#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)));
@@ -53,14 +58,114 @@ namespace Script_Editor_Reverse
                             t++;
                             break;
 
+                        case "fc":
+                            t++;
+                            n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            m += " " + n;
+
+                            if (n == "07" || n == "09" || n == "0a" || n == "0f" || n == "15" || n == "16" || n == "17" || n == "18")
+                            {
+                                var fcA = (
+                                    from a in mojixml.Elements("node")
+                                    where a.Element("ID").Value == m
+                                    select a
+                                    ).FirstOrDefault();
+
+                                if (fcA != null)
+                                {
+                                    resultbuffer += fcA.Element("moji").Value;
+                                }
+                                else
+                                {
+                                    resultbuffer += m + " ";
+                                }
+                                t++;
+                                break;
+                            }
+
+                            t++;
+                            o = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            m += " " + o;
+
+                            if (n != "04" || n != "0b" || n != "10")
+                            {
+                                var fcAB = (
+                                    from b in mojixml.Elements("node")
+                                    where b.Element("ID").Value == m
+                                    select b
+                                    ).FirstOrDefault();
+
+                                if (fcAB != null)
+                                {
+                                    resultbuffer += fcAB.Element("moji").Value;
+                                }
+                                else
+                                {
+                                    resultbuffer += m + " ";
+                                }
+                                t++;
+                                break;
+                            }
+
+                            t++;
+                            p = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            m += " " + p;
+
+                            if (n == "0b" || n == "10")
+                            {
+                                var fcABC = (
+                                    from c in mojixml.Elements("node")
+                                    where c.Element("ID").Value == m
+                                    select c
+                                    ).FirstOrDefault();
+
+                                if (fcABC != null)
+                                {
+                                    resultbuffer += fcABC.Element("moji").Value;
+                                }
+                                else
+                                {
+                                    resultbuffer += m + " ";
+                                }
+                                t++;
+                                break;
+                            }
+
+                            t++;
+                            q = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            m += " " + q;
+
+                            if (n == "04")
+                            {
+                                var fcABCD = (
+                                    from d in mojixml.Elements("node")
+                                    where d.Element("ID").Value == m
+                                    select d
+                                    ).FirstOrDefault();
+
+                                if (fcABCD != null)
+                                {
+                                    resultbuffer += fcABCD.Element("moji").Value;
+                                }
+                                else
+                                {
+                                    resultbuffer += m + " ";
+                                }
+                                t++;
+                                break;
+                            }
+
+                            t++;
+                            break;
+
                         case "fd":
                             t++;
                             m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
                             var fdxx = (
-                                from p in mojixml.Elements("node")
-                                where p.Element("ID").Value == m
-                                select p
+                                from e in mojixml.Elements("node")
+                                where e.Element("ID").Value == m
+                                select e
                                 ).FirstOrDefault();
 
                             if (fdxx != null)
@@ -92,9 +197,9 @@ namespace Script_Editor_Reverse
                             m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
                             var moji = (
-                                from p in mojixml.Elements("node")
-                                where p.Element("ID").Value == m
-                                select p
+                                from d in mojixml.Elements("node")
+                                where d.Element("ID").Value == m
+                                select d
                                 ).FirstOrDefault();
 
                             if (moji != null)
