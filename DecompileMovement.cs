@@ -78,5 +78,82 @@ namespace Script_Editor_Reverse
                 return Result;
             }
         }
+
+        public static List<string> DecompileBinary(string selectedROMPath, int location, string romCode)
+        {
+            using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            {
+                List<string> Result = new List<string>();
+
+                byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
+                string m;
+
+                Result.Add("#movement 0x" + Convert.ToString(string.Format("{0:X6}", location)));
+                string resultbuffer = "";
+
+                int i = 0;
+
+                do
+                {
+                    m = Convert.ToString(string.Format("{0:X2}", file[location + i]));
+
+                    Result.Add(resultbuffer + m);
+
+                    i++;
+                }
+                while (m != "FE");
+
+                Result.Add("");
+
+                return Result;
+            }
+        }
+
+        public static List<string> DecompileRaw(string selectedROMPath, int location, string romCode)
+        {
+            using (FileStream fs = new FileStream(selectedROMPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            {
+                List<string> Result = new List<string>();
+
+                byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
+                string m;
+
+                Result.Add("$" + Convert.ToString(string.Format("{0:X6}", location)) + ":");
+                string resultbuffer = "";
+
+                int i = 0;
+
+                resultbuffer += ".byte ";
+
+                do
+                {
+                    m = Convert.ToString(string.Format("{0:X2}", file[location + i]));
+
+                    switch (m)
+                    {
+                        case "FE":
+                            m = m.Replace("FE", "0xFE");
+
+                            resultbuffer += m;
+                            i++;
+                            break;
+
+                        default:
+                            m = "0x" + Convert.ToString(string.Format("{0:X2}", file[location + i])) + ",";
+
+                            resultbuffer += m;
+                            i++;
+                            break;
+                    }
+                }
+                while (m != "0xFE");
+
+                Result.Add(resultbuffer);
+
+                Result.Add("");
+
+                return Result;
+            }
+        }
     }
 }

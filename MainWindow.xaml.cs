@@ -121,14 +121,49 @@ namespace Script_Editor_Reverse
 
             foreach (int locationChar in msg)
             {
-                msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileMSG(selectedROMPath, locationChar));
+                msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileBinary(selectedROMPath, locationChar));
             }
 
             movement = movement.Distinct().ToList();
 
             foreach (int locationMovement in movement)
             {
-                movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode));
+                movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileBinary(selectedROMPath, locationMovement, romCode));
+            }
+
+            textEditor.Text += msgLine + movementLine;
+        }
+
+        private void macro(object sender, RoutedEventArgs e)
+        {
+            bool equ = false;
+
+            string msgLine = "";
+            string movementLine = "";
+
+            string romCode = GetROMCode();
+
+            //逆コンパイル実行
+            List<int> list = new List<int>();
+            List<int> msg = new List<int>();
+            List<int> movement = new List<int>();
+
+            location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+            textEditor.Text = string.Join(Environment.NewLine, DecompileMacro.DecompileCommand(selectedROMPath, location, list, msg, movement, equ));
+
+            msg = msg.Distinct().ToList();
+
+            foreach (int locationChar in msg)
+            {
+                msgLine += "\n" + string.Join(Environment.NewLine, DecompileChar.DecompileRaw(selectedROMPath, locationChar));
+            }
+
+            movement = movement.Distinct().ToList();
+
+            foreach (int locationMovement in movement)
+            {
+                movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileRaw(selectedROMPath, locationMovement, romCode));
             }
 
             textEditor.Text += msgLine + movementLine;
