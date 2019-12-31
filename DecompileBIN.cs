@@ -492,6 +492,7 @@ namespace Script_Editor_Reverse
                             for (int h = 0; h < 2; h++)
                             {
                                 i++;
+                                offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
                                 cmdLine += offset;
                             }
 
