@@ -96,7 +96,6 @@ namespace Script_Editor_Reverse
             foreach (int locationMovement in movement)
             {
                 movementLine += "\n" + string.Join(Environment.NewLine, DecompileMovement.DecompileCommand(selectedROMPath, locationMovement, romCode));
-
             }
 
             textEditor.Text += msgLine + movementLine;

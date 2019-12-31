@@ -36,7 +36,6 @@ namespace Script_Editor_Reverse
                             m = m.Replace("FE", "end");
 
                             Result.Add(resultbuffer + m);
-                            resultbuffer = "";
                             i++;
                             break;
 
@@ -54,23 +53,19 @@ namespace Script_Editor_Reverse
                                 if (romCode == "BPRJ" || romCode == "BPRE" || romCode == "BPGJ" || romCode == "BPGE")
                                 {
                                     Result.Add(resultbuffer + movement.Element("FRLG").Value);
-                                    resultbuffer = "";
                                 }
                                 else if (romCode == "BPEJ" || romCode == "BPEE")
                                 {
                                     Result.Add(resultbuffer + movement.Element("EM").Value);
-                                    resultbuffer = "";
                                 }
                                 else
                                 {
                                     Result.Add(resultbuffer + m);
-                                    resultbuffer = "";
                                 }
                             }
                             else
                             {
                                 Result.Add(resultbuffer + m);
-                                resultbuffer = "";
                             }
                             i++;
                             break;

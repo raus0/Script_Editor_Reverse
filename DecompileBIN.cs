@@ -64,26 +64,21 @@ namespace Script_Editor_Reverse
                     {
                         case ".endm":
                             Result.Add(BC);
-                            
                             i++;
                             break;
 
                         case ".void":
                             Result.Add(BC);
-                            
                             i++;
                             break;
 
                         case ".byte":
                             cmdLine = BC + " ";
-
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -94,12 +89,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -110,12 +103,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -126,12 +117,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -142,12 +131,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -158,12 +145,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -176,13 +161,11 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -195,13 +178,11 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -214,13 +195,11 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -233,7 +212,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -253,7 +231,6 @@ namespace Script_Editor_Reverse
                                 j++;
                             }
                             j--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -270,12 +247,10 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + string.Join(Environment.NewLine,
-                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -288,7 +263,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -308,7 +282,6 @@ namespace Script_Editor_Reverse
                                 j++;
                             }
                             j--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -325,14 +298,12 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + string.Join(Environment.NewLine,
-                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             CommandType = endCmd;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -343,12 +314,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -361,13 +330,11 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -376,7 +343,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             j = i;
@@ -385,7 +351,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -405,7 +370,6 @@ namespace Script_Editor_Reverse
                                 j++;
                             }
                             j--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -422,12 +386,10 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + string.Join(Environment.NewLine,
-                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -436,19 +398,16 @@ namespace Script_Editor_Reverse
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             for (int w = 0; w < 4; w++)
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -459,17 +418,14 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -480,17 +436,14 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -499,19 +452,16 @@ namespace Script_Editor_Reverse
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             for (int h = 0; h < 2; h++)
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -522,7 +472,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -530,12 +479,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -545,8 +492,6 @@ namespace Script_Editor_Reverse
                             for (int h = 0; h < 2; h++)
                             {
                                 i++;
-                                offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -554,12 +499,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -570,7 +513,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -578,12 +520,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -594,7 +534,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -602,12 +541,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -618,7 +555,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -628,13 +564,11 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -645,7 +579,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -653,7 +586,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -661,12 +593,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -677,7 +607,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -687,7 +616,6 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
@@ -696,12 +624,10 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -712,25 +638,21 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             for (int h = 0; h < 2; h++)
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -741,20 +663,17 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             for (int h = 0; h < 2; h++)
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -764,18 +683,15 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -784,7 +700,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("{0:X2}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             switch (c)
@@ -828,7 +743,6 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
@@ -841,7 +755,6 @@ namespace Script_Editor_Reverse
                                 {
                                     i++;
                                     offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                    offset.ToUpper();
                                     cmdLine += offset;
                                 }
                             }
@@ -864,7 +777,6 @@ namespace Script_Editor_Reverse
                                     j++;
                                 }
                                 j--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 for (int z = 0; z < 5; z++)
@@ -892,8 +804,7 @@ namespace Script_Editor_Reverse
                                         else
                                         {
                                             list.Add(sublocation);
-                                            subLine += "\n" + string.Join(Environment.NewLine,
-                                                           DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                            subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                                         }
                                     }
                                     else
@@ -906,7 +817,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -919,7 +829,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -939,7 +848,6 @@ namespace Script_Editor_Reverse
                                 k++;
                             }
                             k--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -950,8 +858,8 @@ namespace Script_Editor_Reverse
                             locationChar = CheckOffset.Listing(location, address);
 
                             msg.Add(locationChar);
+
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -960,7 +868,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                            offset.ToUpper();
                             cmdLine += offset;
 
                             k = i;
@@ -969,7 +876,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -989,7 +895,6 @@ namespace Script_Editor_Reverse
                                 k++;
                             }
                             k--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -1002,7 +907,6 @@ namespace Script_Editor_Reverse
                             msg.Add(locationChar);
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1013,7 +917,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -1023,7 +926,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 offset = Convert.ToString(string.Format("{0:X2} ", file[location + i]));
-                                offset.ToUpper();
                                 cmdLine += offset;
                             }
 
@@ -1043,7 +945,6 @@ namespace Script_Editor_Reverse
                                 k++;
                             }
                             k--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -1056,13 +957,11 @@ namespace Script_Editor_Reverse
                             movement.Add(locationMovement);
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
                         default:
                             Result.Add(BC);
-                            
                             i++;
                             break;
                     }

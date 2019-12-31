@@ -41,7 +41,6 @@ namespace Script_Editor_Reverse
                 do
                 {
                     c = Convert.ToString(string.Format("{0:X2}", file[location + i]));
-                    c.ToUpper();
 
                     var Name = (
                         from p in commandxml.Elements("node")
@@ -78,13 +77,11 @@ namespace Script_Editor_Reverse
                     {
                         case ".endm":
                             Result.Add(BC);
-                            
                             i++;
                             break;
 
                         case ".void":
                             Result.Add(BC);
-                            
                             i++;
                             break;
 
@@ -93,11 +90,9 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -108,7 +103,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 1)
@@ -118,7 +112,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -129,7 +122,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 2)
@@ -139,7 +131,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -150,7 +141,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 3)
@@ -160,7 +150,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -171,7 +160,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 4)
@@ -181,7 +169,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -203,7 +190,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -211,7 +197,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -235,7 +220,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -249,7 +233,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -273,7 +256,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -287,7 +269,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -311,7 +292,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -325,7 +305,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -348,7 +327,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -371,7 +349,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -394,7 +371,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -413,14 +389,12 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + string.Join(Environment.NewLine,
-                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             CommandType = endCmd;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -443,7 +417,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -454,7 +427,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -479,7 +451,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 for (int z = 0; z < 5; z++)
@@ -496,7 +467,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -505,7 +475,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             i++;
@@ -524,7 +493,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -543,12 +511,10 @@ namespace Script_Editor_Reverse
                             else
                             {
                                 list.Add(sublocation);
-                                subLine += "\n" + string.Join(Environment.NewLine,
-                                               DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -557,7 +523,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             i++;
@@ -576,7 +541,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -587,7 +551,6 @@ namespace Script_Editor_Reverse
                             cmdLine += " " + address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -610,7 +573,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -622,11 +584,9 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -648,7 +608,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -657,11 +616,9 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -670,7 +627,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             i++;
@@ -688,7 +644,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -696,7 +651,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -718,7 +672,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -741,7 +694,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -752,7 +704,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -774,7 +725,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -785,7 +735,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 1)
@@ -795,7 +744,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -817,7 +765,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -828,7 +775,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 2)
@@ -838,7 +784,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -849,7 +794,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c + " ";
                             }
 
@@ -868,7 +812,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -876,7 +819,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -887,7 +829,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c + " ";
                             }
 
@@ -908,7 +849,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -922,7 +862,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -944,7 +883,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -967,7 +905,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -981,7 +918,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 1)
@@ -991,7 +927,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1002,7 +937,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c + " ";
                             }
 
@@ -1023,7 +957,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -1037,7 +970,6 @@ namespace Script_Editor_Reverse
                             {
                                 i++;
                                 c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                                c.ToUpper();
                                 cmdLine += c;
 
                                 if (n < 1)
@@ -1047,7 +979,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1069,7 +1000,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -1078,7 +1008,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             i++;
@@ -1096,7 +1025,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -1104,7 +1032,6 @@ namespace Script_Editor_Reverse
                             cmdLine += address;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1126,7 +1053,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -1135,7 +1061,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             i++;
@@ -1153,7 +1078,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -1178,7 +1102,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 for (int z = 0; z < 5; z++)
@@ -1193,11 +1116,9 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c;
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1206,7 +1127,6 @@ namespace Script_Editor_Reverse
 
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             switch (c)
@@ -1261,7 +1181,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 address = address.Replace("0x0", "0x");
@@ -1289,7 +1208,6 @@ namespace Script_Editor_Reverse
                                     i++;
                                 }
                                 i--;
-                                offset.ToUpper();
 
                                 address += offset;
                                 for (int z = 0; z < 5; z++)
@@ -1319,8 +1237,7 @@ namespace Script_Editor_Reverse
                                         else
                                         {
                                             list.Add(sublocation);
-                                            subLine += "\n" + string.Join(Environment.NewLine,
-                                                           DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
+                                            subLine += "\n" + string.Join(Environment.NewLine, DecompileCommand(selectedROMPath, sublocation, list, msg, movement));
                                         }
                                     }
                                     else
@@ -1335,7 +1252,6 @@ namespace Script_Editor_Reverse
                             }
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1358,7 +1274,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -1373,7 +1288,6 @@ namespace Script_Editor_Reverse
                             msg.Add(locationChar);
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1383,7 +1297,6 @@ namespace Script_Editor_Reverse
                             //loadpointer 第一引数[byte] メモリバンク
                             i++;
                             c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
-                            c.ToUpper();
                             cmdLine += c + " ";
 
                             /*コマンドの統一は必要だと思うが、ある程度柔軟性も持たせるべき
@@ -1397,6 +1310,7 @@ namespace Script_Editor_Reverse
                                     cmdLine = cmdLine.Replace("loadpointer 0x0", "msgbox");　//loadpointerの第一引数が0x0であればmsgboxに変換
                                     i++;
                                     break;
+
                                 default:
                                     i++;
                                     break;
@@ -1418,7 +1332,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             //直観的に分かりやすくするため0x8******を0x******と省略
 
@@ -1435,7 +1348,6 @@ namespace Script_Editor_Reverse
                             msg.Add(locationChar);
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
@@ -1457,7 +1369,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             address = address.Replace("0x0", "0x");
@@ -1480,7 +1391,6 @@ namespace Script_Editor_Reverse
                                 i++;
                             }
                             i--;
-                            offset.ToUpper();
 
                             address += offset;
                             for (int z = 0; z < 5; z++)
@@ -1495,13 +1405,11 @@ namespace Script_Editor_Reverse
                             movement.Add(locationMovement);
 
                             Result.Add(cmdLine);
-                            
                             i++;
                             break;
 
                         default:
                             Result.Add(BC);
-                            
                             i++;
                             break;
                     }
