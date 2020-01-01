@@ -188,6 +188,15 @@ namespace Script_Editor_Reverse
         private void Compile(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Compile！");
+
+            FileStream filestream = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+            filestream.Lock(0, filestream.Length);
+            filestream.Unlock(0, filestream.Length);
+
+            //ここでファイルの書き込み処理を行う
+            //書き込みにはFilestream.Write関数を使用すること
+
+            filestream.Close();
         }
 
         void OpenCmdExecuted(object target, ExecutedRoutedEventArgs e)

@@ -241,8 +241,6 @@ namespace Script_Editor_Reverse
 
                 int t = 0;
 
-                var mojixml = XElement.Load(@"moji.xml");
-
                 do
                 {
                     m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
@@ -276,20 +274,7 @@ namespace Script_Editor_Reverse
 
                             if (n == "07" || n == "09" || n == "0a" || n == "0f" || n == "15" || n == "16" || n == "17" || n == "18")
                             {
-                                var fcA = (
-                                    from a in mojixml.Elements("node")
-                                    where a.Element("ID").Value == m
-                                    select a
-                                    ).FirstOrDefault();
-
-                                if (fcA != null)
-                                {
-                                    resultbuffer += fcA.Element("ID").Value + " ";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
+                                resultbuffer += m + " ";
                                 t++;
                                 break;
                             }
@@ -300,20 +285,7 @@ namespace Script_Editor_Reverse
 
                             if (n != "04" && n != "0b" && n != "10")
                             {
-                                var fcAB = (
-                                    from b in mojixml.Elements("node")
-                                    where b.Element("ID").Value == m
-                                    select b
-                                    ).FirstOrDefault();
-
-                                if (fcAB != null)
-                                {
-                                    resultbuffer += fcAB.Element("ID").Value + " ";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
+                                resultbuffer += m + " ";
                                 t++;
                                 break;
                             }
@@ -324,20 +296,7 @@ namespace Script_Editor_Reverse
 
                             if (n == "0b" || n == "10")
                             {
-                                var fcABC = (
-                                    from c in mojixml.Elements("node")
-                                    where c.Element("ID").Value == m
-                                    select c
-                                    ).FirstOrDefault();
-
-                                if (fcABC != null)
-                                {
-                                    resultbuffer += fcABC.Element("ID").Value + " ";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
+                                resultbuffer += m + " ";
                                 t++;
                                 break;
                             }
@@ -348,20 +307,7 @@ namespace Script_Editor_Reverse
 
                             if (n == "04")
                             {
-                                var fcABCD = (
-                                    from d in mojixml.Elements("node")
-                                    where d.Element("ID").Value == m
-                                    select d
-                                    ).FirstOrDefault();
-
-                                if (fcABCD != null)
-                                {
-                                    resultbuffer += fcABCD.Element("ID").Value + " ";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
+                                resultbuffer += m + " ";
                                 t++;
                                 break;
                             }
@@ -372,21 +318,7 @@ namespace Script_Editor_Reverse
                         case "fd":
                             t++;
                             m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
-
-                            var fdxx = (
-                                from e in mojixml.Elements("node")
-                                where e.Element("ID").Value == m
-                                select e
-                                ).FirstOrDefault();
-
-                            if (fdxx != null)
-                            {
-                                resultbuffer += fdxx.Element("ID").Value + " ";
-                            }
-                            else
-                            {
-                                resultbuffer += m + " ";
-                            }
+                            resultbuffer += m + " ";
                             t++;
                             break;
 
@@ -405,21 +337,7 @@ namespace Script_Editor_Reverse
 
                         default:
                             m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-
-                            var moji = (
-                                from d in mojixml.Elements("node")
-                                where d.Element("ID").Value == m
-                                select d
-                                ).FirstOrDefault();
-
-                            if (moji != null)
-                            {
-                                resultbuffer += moji.Element("ID").Value + " ";
-                            }
-                            else
-                            {
-                                resultbuffer += m + " ";
-                            }
+                            resultbuffer += m + " ";
                             t++;
                             break;
                     }
@@ -451,8 +369,6 @@ namespace Script_Editor_Reverse
 
                 int t = 0;
 
-                var mojixml = XElement.Load(@"moji.xml");
-
                 resultbuffer += ".byte ";
 
                 do
@@ -464,6 +380,7 @@ namespace Script_Editor_Reverse
                         case "00":
                             m = m.Replace("00", "0x00,");
                             resultbuffer += m;
+
                             t++;
                             break;
 
@@ -471,6 +388,7 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fa", "0xfa");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
+
                             t++;
                             break;
 
@@ -478,102 +396,49 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fb", "0xfb");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
+
                             t++;
                             break;
 
                         case "fc":
+                            resultbuffer += m.Replace("fc", "0xfc,");
+
                             t++;
                             n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + n;
+                            resultbuffer += "0x" + n + ",";
 
                             if (n == "07" || n == "09" || n == "0a" || n == "0f" || n == "15" || n == "16" || n == "17" || n == "18")
                             {
-                                var fcA = (
-                                    from a in mojixml.Elements("node")
-                                    where a.Element("ID").Value == m
-                                    select a
-                                    ).FirstOrDefault();
-
-                                if (fcA != null)
-                                {
-                                    resultbuffer += "0x" + fcA.Element("ID").Value + ",";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
                                 t++;
                                 break;
                             }
 
                             t++;
                             o = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + o;
+                            resultbuffer += "0x" + o + ",";
 
                             if (n != "04" && n != "0b" && n != "10")
                             {
-                                var fcAB = (
-                                    from b in mojixml.Elements("node")
-                                    where b.Element("ID").Value == m
-                                    select b
-                                    ).FirstOrDefault();
-
-                                if (fcAB != null)
-                                {
-                                    resultbuffer += "0x" + fcAB.Element("ID").Value + ",";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
                                 t++;
                                 break;
                             }
 
                             t++;
                             p = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + p;
+                            resultbuffer += "0x" + p + ",";
 
                             if (n == "0b" || n == "10")
                             {
-                                var fcABC = (
-                                    from c in mojixml.Elements("node")
-                                    where c.Element("ID").Value == m
-                                    select c
-                                    ).FirstOrDefault();
-
-                                if (fcABC != null)
-                                {
-                                    resultbuffer += "0x" + fcABC.Element("ID").Value + ",";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
                                 t++;
                                 break;
                             }
 
                             t++;
                             q = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + q;
+                            resultbuffer += "0x" + q + ",";
 
                             if (n == "04")
                             {
-                                var fcABCD = (
-                                    from d in mojixml.Elements("node")
-                                    where d.Element("ID").Value == m
-                                    select d
-                                    ).FirstOrDefault();
-
-                                if (fcABCD != null)
-                                {
-                                    resultbuffer += "0x" + fcABCD.Element("ID").Value + ",";
-                                }
-                                else
-                                {
-                                    resultbuffer += m + " ";
-                                }
                                 t++;
                                 break;
                             }
@@ -582,25 +447,12 @@ namespace Script_Editor_Reverse
                             break;
 
                         case "fd":
-                            resultbuffer += m.Replace("fd", "0xfd,");
+                            resultbuffer = m.Replace("fd", "0xfd,");
 
                             t++;
-                            m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += "0x" + n + ",";
 
-                            var fdxx = (
-                                from e in mojixml.Elements("node")
-                                where e.Element("ID").Value == m
-                                select e
-                                ).FirstOrDefault();
-
-                            if (fdxx != null)
-                            {
-                                resultbuffer += "0x" + fdxx.Element("ID").Value + ",";
-                            }
-                            else
-                            {
-                                resultbuffer += m + " ";
-                            }
                             t++;
                             break;
 
@@ -608,6 +460,7 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fe", "0xfe");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
+
                             t++;
                             break;
 
@@ -615,26 +468,14 @@ namespace Script_Editor_Reverse
                             m = m.Replace("ff", "0xff");
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
+
                             t++;
                             break;
 
                         default:
                             m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += "0x" + m + ",";
 
-                            var moji = (
-                                from d in mojixml.Elements("node")
-                                where d.Element("ID").Value == m
-                                select d
-                                ).FirstOrDefault();
-
-                            if (moji != null)
-                            {
-                                resultbuffer += "0x" + moji.Element("ID").Value + ",";
-                            }
-                            else
-                            {
-                                resultbuffer += m + " ";
-                            }
                             t++;
                             break;
                     }
