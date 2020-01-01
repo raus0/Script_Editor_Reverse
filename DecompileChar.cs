@@ -22,8 +22,6 @@ namespace Script_Editor_Reverse
                 string p;
                 string q;
 
-                string endChar = "Ω";
-
                 Result.Add("#msg 0x" + Convert.ToString(string.Format("{0:X6}", location)));
 
                 string resultbuffer = "";
@@ -256,6 +254,8 @@ namespace Script_Editor_Reverse
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
 
+                            m = "ff";
+
                             t++;
                             break;
 
@@ -279,7 +279,7 @@ namespace Script_Editor_Reverse
                             break;
                     }
                 }
-                while (m != endChar);
+                while (m != "ff");
 
                 Result.Add("");
 

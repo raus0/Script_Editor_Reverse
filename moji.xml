@@ -37373,17 +37373,17 @@
 
   <node>
     <ID>fd 02</ID>
-    <moji>\1</moji>
+    <moji>\0</moji>
   </node>
 
   <node>
     <ID>fd 03</ID>
-    <moji>\2</moji>
+    <moji>\1</moji>
   </node>
 
   <node>
     <ID>fd 04</ID>
-    <moji>\3</moji>
+    <moji>\2</moji>
   </node>
 
   <node>
