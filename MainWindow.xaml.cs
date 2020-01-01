@@ -33,6 +33,9 @@ namespace Script_Editor_Reverse
                     selectedROMPath = string.Format("{1}", i, Commands[i]);
                     FilePath.Text = selectedROMPath;
                     txtDecompileOffset.IsEnabled = true;
+                    Decompilebtn.IsEnabled = true;
+                    BINbtn.IsEnabled = true;
+                    macrobtn.IsEnabled = true;
                 }
                 else if (i == 2)
                 {
@@ -209,6 +212,9 @@ namespace Script_Editor_Reverse
                     selectedROMPath = dialog.FileName;
                     FilePath.Text = selectedROMPath;
                     txtDecompileOffset.IsEnabled = true;
+                    Decompilebtn.IsEnabled = true;
+                    BINbtn.IsEnabled = true;
+                    macrobtn.IsEnabled = true;
                     string romCode = GetROMCode();
                     textEditor.Text = "ROM Infomation : " + romCode;
                 }
@@ -227,6 +233,9 @@ namespace Script_Editor_Reverse
                 selectedROMPath = file[0];
                 FilePath.Text = selectedROMPath;
                 txtDecompileOffset.IsEnabled = true;
+                Decompilebtn.IsEnabled = true;
+                BINbtn.IsEnabled = true;
+                macrobtn.IsEnabled = true;
                 string romCode = GetROMCode();
                 textEditor.Text = "ROM Infomation : " + romCode;
             }

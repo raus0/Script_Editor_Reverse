@@ -47,9 +47,9 @@
             <TextBox x:Name="FilePath" HorizontalAlignment="Left" Height="19.96" Margin="8,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
             <Button x:Name="Compilebtn" Click="Compile" Content="Compile" HorizontalAlignment="Left" Margin="213,6.04,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Background="White" IsEnabled="False"/>
             <TextBox x:Name="txtDecompileOffset" HorizontalAlignment="Left" Height="19.96" Margin="293,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="0x000000" TextDecorations="{x:Null}" IsEnabled="False"/>
-            <Button x:Name="Decompilebtn" Click="Decompile" Content="Decompile" HorizontalAlignment="Left" Margin="373,6.04,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
-            <Button x:Name="BINbtn" Click="BIN" Content="BIN" HorizontalAlignment="Left" Margin="453,6.04,0,0" VerticalAlignment="Top" Width="50.087" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
-            <Button x:Name="macrobtn" Click="macro" Content="macro" HorizontalAlignment="Left" Margin="508.087,6.04,0,0" VerticalAlignment="Top" Width="50.087" RenderTransformOrigin="0.194,0" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+            <Button x:Name="Decompilebtn" Click="Decompile" Content="Decompile" HorizontalAlignment="Left" Margin="373,6.04,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
+            <Button x:Name="BINbtn" Click="BIN" Content="BIN" HorizontalAlignment="Left" Margin="453,6.04,0,0" VerticalAlignment="Top" Width="50.087" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
+            <Button x:Name="macrobtn" Click="macro" Content="macro" HorizontalAlignment="Left" Margin="508.087,6.04,0,0" VerticalAlignment="Top" Width="50.087" RenderTransformOrigin="0.194,0" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
         </Grid>
     </DockPanel>
 </Window>

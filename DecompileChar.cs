@@ -41,20 +41,54 @@ namespace Script_Editor_Reverse
                         case "00":
                             m = m.Replace("00", " ");
                             resultbuffer += m;
+
                             t++;
                             break;
 
                         case "fa":
-                            m = m.Replace("fa", "￥m");
+
+                            var fa = (
+                                from d in mojixml.Elements("node")
+                                where d.Element("ID").Value == m
+                                select d
+                                ).FirstOrDefault();
+
+                            if (fa != null)
+                            {
+                                m = fa.Element("moji").Value;
+                            }
+                            else
+                            {
+                                m = m + " ";
+                            }
+
+
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
+
                             t++;
                             break;
 
                         case "fb":
-                            m = m.Replace("fb", "￥p");
+
+                            var fb = (
+                                from d in mojixml.Elements("node")
+                                where d.Element("ID").Value == m
+                                select d
+                                ).FirstOrDefault();
+
+                            if (fb != null)
+                            {
+                                m = fb.Element("moji").Value;
+                            }
+                            else
+                            {
+                                m = m + " ";
+                            }
+
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
+
                             t++;
                             break;
 
@@ -73,11 +107,11 @@ namespace Script_Editor_Reverse
 
                                 if (fcA != null)
                                 {
-                                    resultbuffer += fcA.Element("moji").Value;
+                                    m = fcA.Element("moji").Value;
                                 }
                                 else
                                 {
-                                    resultbuffer += m + " ";
+                                    m = m + " ";
                                 }
                                 t++;
                                 break;
@@ -180,21 +214,52 @@ namespace Script_Editor_Reverse
                             break;
 
                         case "fe":
-                            m = m.Replace("fe", "￥n");
+
+                            var fe = (
+                                from d in mojixml.Elements("node")
+                                where d.Element("ID").Value == m
+                                select d
+                                ).FirstOrDefault();
+
+                            if (fe != null)
+                            {
+                                m = fe.Element("moji").Value;
+                            }
+                            else
+                            {
+                                m = m + " ";
+                            }
+
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
+
                             t++;
                             break;
 
                         case "ff":
-                            m = m.Replace("ff", "Ω");
+
+                            var ff = (
+                                from d in mojixml.Elements("node")
+                                where d.Element("ID").Value == m
+                                select d
+                                ).FirstOrDefault();
+
+                            if (ff != null)
+                            {
+                                m = ff.Element("moji").Value;
+                            }
+                            else
+                            {
+                                m = m + " ";
+                            }
+
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
+
                             t++;
                             break;
 
                         default:
-                            m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
 
                             var moji = (
                                 from d in mojixml.Elements("node")
