@@ -1131,39 +1131,39 @@ namespace Script_Editor_Reverse
                             break;
 
                         case ".byte.hwordx2.word(.wordx3)":
-                            cmdLine = BC + " ";
+                            cmdLine = BC;
 
                             i++;
-                            c = Convert.ToString(string.Format("0x{0:X1}", file[location + i]));
+                            c = Convert.ToString(string.Format("_{0:X2}", file[location + i]));
                             cmdLine += c + " ";
 
                             switch (c)
                             {
-                                case "0x1":
+                                case "_01":
                                     arg = 3;
                                     break;
 
-                                case "0x2":
+                                case "_02":
                                     arg = 3;
                                     break;
 
-                                case "0x3":
+                                case "_03":
                                     arg = 1;
                                     break;
 
-                                case "0x4":
+                                case "_04":
                                     arg = 3;
                                     break;
 
-                                case "0x6":
+                                case "_06":
                                     arg = 4;
                                     break;
 
-                                case "0x7":
+                                case "_07":
                                     arg = 3;
                                     break;
 
-                                case "0x8":
+                                case "_08":
                                     arg = 4;
                                     break;
 
@@ -1195,7 +1195,10 @@ namespace Script_Editor_Reverse
 
                                 address += " ";
 
-                                cmdLine += address;
+                                if (n == 0)
+                                {
+                                    cmdLine += address;
+                                }
                             }
 
                             for (int n = 0; n < arg; n++)

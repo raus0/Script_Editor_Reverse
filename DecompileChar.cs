@@ -447,7 +447,7 @@ namespace Script_Editor_Reverse
                             break;
 
                         case "fd":
-                            resultbuffer = m.Replace("fd", "0xfd,");
+                            resultbuffer += m.Replace("fd", "0xfd,");
 
                             t++;
                             n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
