@@ -43,6 +43,69 @@ namespace Script_Editor_Reverse
                             t++;
                             break;
 
+                        case "f7":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+
+                            var f7xx = (
+                                from e in mojixml.Elements("node")
+                                where e.Element("ID").Value == m
+                                select e
+                                ).FirstOrDefault();
+
+                            if (f7xx != null)
+                            {
+                                resultbuffer += f7xx.Element("moji").Value;
+                            }
+                            else
+                            {
+                                resultbuffer += m + " ";
+                            }
+                            t++;
+                            break;
+
+                        case "f8":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+
+                            var f8xx = (
+                                from e in mojixml.Elements("node")
+                                where e.Element("ID").Value == m
+                                select e
+                                ).FirstOrDefault();
+
+                            if (f8xx != null)
+                            {
+                                resultbuffer += f8xx.Element("moji").Value;
+                            }
+                            else
+                            {
+                                resultbuffer += m + " ";
+                            }
+                            t++;
+                            break;
+
+                        case "f9":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+
+                            var f9xx = (
+                                from e in mojixml.Elements("node")
+                                where e.Element("ID").Value == m
+                                select e
+                                ).FirstOrDefault();
+
+                            if (f9xx != null)
+                            {
+                                resultbuffer += f9xx.Element("moji").Value;
+                            }
+                            else
+                            {
+                                resultbuffer += m + " ";
+                            }
+                            t++;
+                            break;
+
                         case "fa":
 
                             var fa = (

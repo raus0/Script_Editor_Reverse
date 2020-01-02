@@ -1587,6 +1587,71 @@
   </node>
 
   <node>
+    <ID>f8 00</ID>
+    <moji>{A}</moji>
+  </node>
+
+  <node>
+    <ID>f8 01</ID>
+    <moji>{B}</moji>
+  </node>
+
+  <node>
+    <ID>f8 02</ID>
+    <moji>{L}</moji>
+  </node>
+
+  <node>
+    <ID>f8 03</ID>
+    <moji>{R}</moji>
+  </node>
+
+  <node>
+    <ID>f8 04</ID>
+    <moji>{START}</moji>
+  </node>
+
+  <node>
+    <ID>f8 05</ID>
+    <moji>{SELECT}</moji>
+  </node>
+
+  <node>
+    <ID>f8 06</ID>
+    <moji>{X↑}</moji>
+  </node>
+
+  <node>
+    <ID>f8 07</ID>
+    <moji>{X↓}</moji>
+  </node>
+
+  <node>
+    <ID>f8 08</ID>
+    <moji>{X←}</moji>
+  </node>
+
+  <node>
+    <ID>f8 09</ID>
+    <moji>{X→}</moji>
+  </node>
+
+  <node>
+    <ID>f8 0A</ID>
+    <moji>{X↑↓}</moji>
+  </node>
+
+  <node>
+    <ID>f8 0B</ID>
+    <moji>{X←→}</moji>
+  </node>
+
+  <node>
+    <ID>f8 0C</ID>
+    <moji>{X}</moji>
+  </node>
+  
+  <node>
     <ID>f9</ID>
     <moji>γ</moji>
   </node>
