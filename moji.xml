@@ -1637,17 +1637,17 @@
   </node>
 
   <node>
-    <ID>f8 0A</ID>
+    <ID>f8 0a</ID>
     <moji>{X↑↓}</moji>
   </node>
 
   <node>
-    <ID>f8 0B</ID>
+    <ID>f8 0b</ID>
     <moji>{X←→}</moji>
   </node>
 
   <node>
-    <ID>f8 0C</ID>
+    <ID>f8 0c</ID>
     <moji>{X}</moji>
   </node>
   
