@@ -15,14 +15,15 @@
                   Executed="OpenCmdExecuted"
                   CanExecute="OpenCmdCanExecute"/>
     </Window.CommandBindings>
-
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="White">
             <MenuItem Header="File" Background="Transparent">
                 <MenuItem Command="Open" />
-                <MenuItem Command="Save" />
+                <MenuItem Name="menuitemSaveAs" Header="保存"
+                          Click="menuiteSaveAs_Click"/>
                 <Separator />
-                <MenuItem Command="Close" />
+                <MenuItem Name="menuitemExit" Header="終了"
+                Click="menuitemExit_Click"/>
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Command="Cut" />
@@ -43,7 +44,18 @@
                                FontFamily="Consolas"
                                FontSize="9pt"
                                ShowLineNumbers="True"
-                               SyntaxHighlighting="PowerShell" />
+                               SyntaxHighlighting="PowerShell" >
+                <avalonEdit:TextEditor.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="Cut" />
+                        <MenuItem Command="Copy" />
+                        <MenuItem Command="Paste" />
+                        <Separator />
+                        <MenuItem Command="Undo" />
+                        <MenuItem Command="Redo" />
+                    </ContextMenu>
+                </avalonEdit:TextEditor.ContextMenu>
+            </avalonEdit:TextEditor>
             <TextBox x:Name="FilePath" HorizontalAlignment="Left" Height="19.96" Margin="8,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
             <Button x:Name="Compilebtn" Click="Compile" Content="Compile" HorizontalAlignment="Left" Margin="213,6.04,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Background="White" IsEnabled="False"/>
             <TextBox x:Name="txtDecompileOffset" HorizontalAlignment="Left" Height="19.96" Margin="293,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="0x000000" TextDecorations="{x:Null}" IsEnabled="False"/>

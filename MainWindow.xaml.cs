@@ -205,6 +205,10 @@ namespace Script_Editor_Reverse
         void OpenCmdExecuted(object target, ExecutedRoutedEventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = @"C:\users\desktop";
+            dialog.FileName = "event.asm";
+            dialog.Filter = "すべてのファイル|*.*|ASM ファイル|*.asm|GBA ファイル|*.gba";
+            dialog.FilterIndex = 3;
             if (dialog.ShowDialog() == true)
             {
                 if (Path.GetExtension(dialog.FileName).ToUpper().Equals(".GBA"))
@@ -218,6 +222,32 @@ namespace Script_Editor_Reverse
                     string romCode = GetROMCode();
                     textEditor.Text = "ROM Infomation : " + romCode;
                 }
+                if (Path.GetExtension(dialog.FileName).ToUpper().Equals(".ASM"))
+                {
+                    FileStream fs = new FileStream(dialog.FileName, FileMode.Open);
+                    StreamReader sr = new StreamReader(fs);
+                    string text = sr.ReadToEnd();
+                    textEditor.Text = text;
+                    sr.Close();
+                    fs.Close();
+                }
+            }
+        }
+
+        private void menuiteSaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.InitialDirectory = @"C:\users\desktop";
+            dialog.FileName = "event.asm";
+            dialog.Filter = "すべてのファイル|*.*|ASM ファイル|*.asm";
+            dialog.FilterIndex = 2;
+            if (dialog.ShowDialog() == true)
+            {
+                FileStream fs = new FileStream(dialog.FileName, FileMode.Create);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(textEditor.Text);
+                sw.Close();
+                fs.Close();
             }
         }
 
@@ -238,6 +268,15 @@ namespace Script_Editor_Reverse
                 macrobtn.IsEnabled = true;
                 string romCode = GetROMCode();
                 textEditor.Text = "ROM Infomation : " + romCode;
+            }
+            if (Path.GetExtension(file[0]).ToUpper().Equals(".ASM"))
+            {
+                FileStream fs = new FileStream((file[0]), FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                string text = sr.ReadToEnd();
+                textEditor.Text = text;
+                sr.Close();
+                fs.Close();
             }
         }
 
