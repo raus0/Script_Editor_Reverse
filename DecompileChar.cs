@@ -16,6 +16,9 @@ namespace Script_Editor_Reverse
                 List<string> Result = new List<string>();
 
                 byte[] file = new BinaryReader(fs).ReadBytes((int)fs.Length);
+                string fcxx;
+                string bgm;
+                string xx;
                 string m;
                 string n;
                 string o;
@@ -158,6 +161,8 @@ namespace Script_Editor_Reverse
                             n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
                             m += " " + n;
 
+                            fcxx = m;
+
                             if (n == "07" || n == "09" || n == "0a" || n == "0f" || n == "15" || n == "16" || n == "17" || n == "18")
                             {
                                 var fcA = (
@@ -168,11 +173,11 @@ namespace Script_Editor_Reverse
 
                                 if (fcA != null)
                                 {
-                                    m = fcA.Element("moji").Value;
+                                    resultbuffer += fcA.Element("moji").Value;
                                 }
                                 else
                                 {
-                                    m = m + " ";
+                                    resultbuffer += m + " ";
                                 }
                                 t++;
                                 break;
@@ -181,6 +186,29 @@ namespace Script_Editor_Reverse
                             t++;
                             o = Convert.ToString(string.Format("{0:x2}", file[location + t]));
                             m += " " + o;
+
+                            if (n == "05" || n == "08" || n == "0c" || n == "0d" || n == "0e" || n == "11" || n == "12" || n == "13" || n == "14")
+                            {
+                                var fcXY = (
+                                    from x in mojixml.Elements("node")
+                                    where x.Element("ID").Value == fcxx
+                                    select x
+                                    ).FirstOrDefault();
+
+                                if (fcXY != null)
+                                {
+                                    xx = "{0x" + o + "}";
+                                    xx = xx.Replace("0x0", "0x");
+
+                                    resultbuffer += fcXY.Element("moji").Value + xx;
+                                }
+                                else
+                                {
+                                    resultbuffer += m + " ";
+                                }
+                                t++;
+                                break;
+                            }
 
                             if (n != "04" && n != "0b" && n != "10")
                             {
@@ -204,19 +232,21 @@ namespace Script_Editor_Reverse
 
                             t++;
                             p = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + p;
-
+                            
                             if (n == "0b" || n == "10")
                             {
                                 var fcABC = (
                                     from c in mojixml.Elements("node")
-                                    where c.Element("ID").Value == m
+                                    where c.Element("ID").Value == fcxx
                                     select c
                                     ).FirstOrDefault();
 
                                 if (fcABC != null)
                                 {
-                                    resultbuffer += fcABC.Element("moji").Value;
+                                    bgm = "{0x" + p + o + "}";
+                                    bgm = bgm.Replace("0x0", "0x");
+
+                                    resultbuffer += fcABC.Element("moji").Value + bgm;
                                 }
                                 else
                                 {
@@ -228,19 +258,26 @@ namespace Script_Editor_Reverse
 
                             t++;
                             q = Convert.ToString(string.Format("{0:x2}", file[location + t]));
-                            m += " " + q;
-
+                            
                             if (n == "04")
                             {
                                 var fcABCD = (
                                     from d in mojixml.Elements("node")
-                                    where d.Element("ID").Value == m
+                                    where d.Element("ID").Value == fcxx
                                     select d
                                     ).FirstOrDefault();
 
                                 if (fcABCD != null)
                                 {
-                                    resultbuffer += fcABCD.Element("moji").Value;
+                                    o = "0x" + o + " ";
+                                    p = "0x" + p + " ";
+                                    q = "0x" + q;
+
+                                    o = o.Replace("0x0", "0x");
+                                    p = p.Replace("0x0", "0x");
+                                    q = q.Replace("0x0", "0x");
+
+                                    resultbuffer += fcABCD.Element("moji").Value + "{" + o + p + q + "}";
                                 }
                                 else
                                 {
@@ -381,6 +418,27 @@ namespace Script_Editor_Reverse
                             t++;
                             break;
 
+                        case "f7":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += m + " ";
+                            t++;
+                            break;
+
+                        case "f8":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += m + " ";
+                            t++;
+                            break;
+
+                        case "f9":
+                            t++;
+                            m += " " + Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += m + " ";
+                            t++;
+                            break;
+
                         case "fa":
                             m = m.Replace("fa", "fa ");
                             Result.Add(resultbuffer + m);
@@ -508,7 +566,30 @@ namespace Script_Editor_Reverse
                         case "00":
                             m = m.Replace("00", "0x00,");
                             resultbuffer += m;
+                            t++;
+                            break;
 
+                        case "f7":
+                            resultbuffer += m.Replace("f7", "0xf7,");
+                            t++;
+                            n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += "0x" + n + ",";
+                            t++;
+                            break;
+
+                        case "f8":
+                            resultbuffer += m.Replace("f8", "0xf8,");
+                            t++;
+                            n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += "0x" + n + ",";
+                            t++;
+                            break;
+
+                        case "f9":
+                            resultbuffer += m.Replace("f9", "0xf9,");
+                            t++;
+                            n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
+                            resultbuffer += "0x" + n + ",";
                             t++;
                             break;
 
@@ -516,7 +597,6 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fa", "0xfa");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
-
                             t++;
                             break;
 
@@ -524,7 +604,6 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fb", "0xfb");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
-
                             t++;
                             break;
 
@@ -576,11 +655,9 @@ namespace Script_Editor_Reverse
 
                         case "fd":
                             resultbuffer += m.Replace("fd", "0xfd,");
-
                             t++;
                             n = Convert.ToString(string.Format("{0:x2}", file[location + t]));
                             resultbuffer += "0x" + n + ",";
-
                             t++;
                             break;
 
@@ -588,7 +665,6 @@ namespace Script_Editor_Reverse
                             m = m.Replace("fe", "0xfe");
                             Result.Add(resultbuffer + m);
                             resultbuffer = ".byte ";
-
                             t++;
                             break;
 
@@ -596,14 +672,12 @@ namespace Script_Editor_Reverse
                             m = m.Replace("ff", "0xff");
                             Result.Add(resultbuffer + m);
                             resultbuffer = "";
-
                             t++;
                             break;
 
                         default:
                             m = Convert.ToString(string.Format("{0:x2}", file[location + t]));
                             resultbuffer += "0x" + m + ",";
-
                             t++;
                             break;
                     }

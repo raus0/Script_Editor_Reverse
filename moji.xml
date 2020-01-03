@@ -1807,8 +1807,38 @@
   </node>
 
   <node>
+    <ID>fc 02</ID>
+    <moji>ε</moji>
+  </node>
+
+  <node>
+    <ID>fc 03</ID>
+    <moji>ζ</moji>
+  </node>
+  
+  <node>
+    <ID>fc 04</ID>
+    <moji>{一括変更}</moji>
+  </node>
+
+  <node>
+    <ID>fc 05</ID>
+    <moji>{RSindex}</moji>
+  </node>
+
+  <node>
+    <ID>fc 06</ID>
+    <moji>η</moji>
+  </node>
+
+  <node>
     <ID>fc 07</ID>
-    <moji>{縦長}</moji>
+    <moji>{RS縦長}</moji>
+  </node>
+
+  <node>
+    <ID>fc 08</ID>
+    <moji>{待機}</moji>
   </node>
 
   <node>
@@ -1820,12 +1850,57 @@
     <ID>fc 0a</ID>
     <moji>{効果音待機}</moji>
   </node>
+  
+  <node>
+    <ID>fc 0b</ID>
+    <moji>{BGM}</moji>
+  </node>
+
+  <node>
+    <ID>fc 0c</ID>
+    <moji>{RSE記号}</moji>
+  </node>
+
+  <node>
+    <ID>fc 0d</ID>
+    <moji>{X座標}</moji>
+  </node>
+  
+    <node>
+    <ID>fc 0e</ID>
+    <moji>{Y座標}</moji>
+  </node>
 
   <node>
     <ID>fc 0f</ID>
     <moji>{文字消去}</moji>
   </node>
+  
+  <node>
+    <ID>fc 10</ID>
+    <moji>{効果音}</moji>
+  </node>
 
+  <node>
+    <ID>fc 11</ID>
+    <moji>{space}</moji>
+  </node>
+
+  <node>
+    <ID>fc 12</ID>
+    <moji>{Xpos1}</moji>
+  </node>
+
+  <node>
+    <ID>fc 13</ID>
+    <moji>{Xpos2}</moji>
+  </node>
+
+  <node>
+    <ID>fc 14</ID>
+    <moji>{px}</moji>
+  </node>
+  
   <node>
     <ID>fc 15</ID>
     <moji>{日本語}</moji>
@@ -1848,257 +1923,272 @@
 
   <node>
     <ID>fc 01 00</ID>
-    <moji>{文字色0}</moji>
+    <moji>{色0}</moji>
   </node>
   
   <node>
     <ID>fc 01 01</ID>
-    <moji>{文字色1}</moji>
+    <moji>{色1}</moji>
   </node>
 
   <node>
     <ID>fc 01 02</ID>
-    <moji>{文字色2}</moji>
+    <moji>{色2}</moji>
   </node>
 
   <node>
     <ID>fc 01 03</ID>
-    <moji>{文字色3}</moji>
+    <moji>{色3}</moji>
   </node>
 
   <node>
     <ID>fc 01 04</ID>
-    <moji>{文字色4}</moji>
+    <moji>{色4}</moji>
   </node>
 
   <node>
     <ID>fc 01 05</ID>
-    <moji>{文字色5}</moji>
+    <moji>{色5}</moji>
   </node>
 
   <node>
     <ID>fc 01 06</ID>
-    <moji>{文字色6}</moji>
+    <moji>{色6}</moji>
   </node>
 
   <node>
     <ID>fc 01 07</ID>
-    <moji>{文字色7}</moji>
+    <moji>{色7}</moji>
   </node>
 
   <node>
     <ID>fc 01 08</ID>
-    <moji>{文字色8}</moji>
+    <moji>{色8}</moji>
   </node>
 
   <node>
     <ID>fc 01 09</ID>
-    <moji>{文字色9}</moji>
+    <moji>{色9}</moji>
   </node>
 
   <node>
     <ID>fc 01 0a</ID>
-    <moji>{文字色a}</moji>
+    <moji>{色a}</moji>
   </node>
 
   <node>
     <ID>fc 01 0b</ID>
-    <moji>{文字色b}</moji>
+    <moji>{色b}</moji>
   </node>
 
   <node>
     <ID>fc 01 0c</ID>
-    <moji>{文字色c}</moji>
+    <moji>{色c}</moji>
   </node>
 
   <node>
     <ID>fc 01 0d</ID>
-    <moji>{文字色d}</moji>
+    <moji>{色d}</moji>
   </node>
 
   <node>
     <ID>fc 01 0e</ID>
-    <moji>{文字色e}</moji>
+    <moji>{色e}</moji>
   </node>
 
   <node>
     <ID>fc 01 0f</ID>
-    <moji>{文字色f}</moji>
+    <moji>{色f}</moji>
   </node>
 
   <node>
     <ID>fc 02 00</ID>
-    <moji>{背景色0}</moji>
+    <moji>{背景0}</moji>
   </node>
 
   <node>
     <ID>fc 02 01</ID>
-    <moji>{背景色1}</moji>
+    <moji>{背景1}</moji>
   </node>
   
   <node>
     <ID>fc 02 02</ID>
-    <moji>{背景色2}</moji>
+    <moji>{背景2}</moji>
   </node>
 
   <node>
     <ID>fc 02 03</ID>
-    <moji>{背景色3}</moji>
+    <moji>{背景3}</moji>
   </node>
 
   <node>
     <ID>fc 02 04</ID>
-    <moji>{背景色4}</moji>
+    <moji>{背景4}</moji>
   </node>
 
   <node>
     <ID>fc 02 05</ID>
-    <moji>{背景色5}</moji>
+    <moji>{背景5}</moji>
   </node>
 
   <node>
     <ID>fc 02 06</ID>
-    <moji>{背景色6}</moji>
+    <moji>{背景6}</moji>
   </node>
 
   <node>
     <ID>fc 02 07</ID>
-    <moji>{背景色7}</moji>
+    <moji>{背景7}</moji>
   </node>
 
   <node>
     <ID>fc 02 08</ID>
-    <moji>{背景色8}</moji>
+    <moji>{背景8}</moji>
   </node>
 
   <node>
     <ID>fc 02 09</ID>
-    <moji>{背景色9}</moji>
+    <moji>{背景9}</moji>
   </node>
 
   <node>
     <ID>fc 02 0a</ID>
-    <moji>{背景色a}</moji>
+    <moji>{背景a}</moji>
   </node>
 
   <node>
     <ID>fc 02 0b</ID>
-    <moji>{背景色b}</moji>
+    <moji>{背景b}</moji>
   </node>
 
   <node>
     <ID>fc 02 0c</ID>
-    <moji>{背景色c}</moji>
+    <moji>{背景c}</moji>
   </node>
 
   <node>
     <ID>fc 02 0d</ID>
-    <moji>{背景色d}</moji>
+    <moji>{背景d}</moji>
   </node>
 
   <node>
     <ID>fc 02 0e</ID>
-    <moji>{背景色e}</moji>
+    <moji>{背景e}</moji>
   </node>
 
   <node>
     <ID>fc 02 0f</ID>
-    <moji>{背景色f}</moji>
+    <moji>{背景f}</moji>
   </node>
-
+  
   <node>
     <ID>fc 03 00</ID>
-    <moji>{影色0}</moji>
+    <moji>{影0}</moji>
   </node>
   
   <node>
     <ID>fc 03 01</ID>
-    <moji>{影色1}</moji>
+    <moji>{影1}</moji>
   </node>
   
   <node>
     <ID>fc 03 02</ID>
-    <moji>{影色2}</moji>
+    <moji>{影2}</moji>
   </node>
 
   <node>
     <ID>fc 03 03</ID>
-    <moji>{影色3}</moji>
+    <moji>{影3}</moji>
   </node>
 
   <node>
     <ID>fc 03 04</ID>
-    <moji>{影色4}</moji>
+    <moji>{影4}</moji>
   </node>
 
   <node>
     <ID>fc 03 05</ID>
-    <moji>{影色5}</moji>
+    <moji>{影5}</moji>
   </node>
 
   <node>
     <ID>fc 03 06</ID>
-    <moji>{影色6}</moji>
+    <moji>{影6}</moji>
   </node>
 
   <node>
     <ID>fc 03 07</ID>
-    <moji>{影色7}</moji>
+    <moji>{影7}</moji>
   </node>
 
   <node>
     <ID>fc 03 08</ID>
-    <moji>{影色8}</moji>
+    <moji>{影8}</moji>
   </node>
 
   <node>
     <ID>fc 03 09</ID>
-    <moji>{影色9}</moji>
+    <moji>{影9}</moji>
   </node>
 
   <node>
     <ID>fc 03 0a</ID>
-    <moji>{影色a}</moji>
+    <moji>{影a}</moji>
   </node>
 
   <node>
     <ID>fc 03 0b</ID>
-    <moji>{影色b}</moji>
+    <moji>{影b}</moji>
   </node>
 
   <node>
     <ID>fc 03 0c</ID>
-    <moji>{影色c}</moji>
+    <moji>{影c}</moji>
   </node>
 
   <node>
     <ID>fc 03 0d</ID>
-    <moji>{影色d}</moji>
+    <moji>{影d}</moji>
   </node>
 
   <node>
     <ID>fc 03 0e</ID>
-    <moji>{影色e}</moji>
+    <moji>{影e}</moji>
   </node>
 
   <node>
     <ID>fc 03 0f</ID>
-    <moji>{影色f}</moji>
+    <moji>{影f}</moji>
   </node>
 
   <node>
-    <ID>fc 02</ID>
-    <moji>ε</moji>
+    <ID>fc 06 00</ID>
+    <moji>{小文字}</moji>
   </node>
 
   <node>
-    <ID>fc 03</ID>
-    <moji>ζ</moji>
+    <ID>fc 06 01</ID>
+    <moji>{縦長}</moji>
   </node>
 
   <node>
-    <ID>fc 06</ID>
-    <moji>η</moji>
+    <ID>fc 06 02</ID>
+    <moji>{ノーマル}</moji>
+  </node>
+
+  <node>
+    <ID>fc 06 03</ID>
+    <moji>{等幅ノーマル}</moji>
+  </node>
+
+  <node>
+    <ID>fc 06 04</ID>
+    <moji>{男性}</moji>
+  </node>
+
+  <node>
+    <ID>fc 06 05</ID>
+    <moji>{女性}</moji>
   </node>
 
   <node>
