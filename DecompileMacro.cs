@@ -1237,7 +1237,7 @@ namespace Script_Editor_Reverse
                                 if (n == arg - 1)
                                 {
 
-                                    if (c == "0x1" || c == "0x2" || c == "0x6" || c == "0x8")
+                                    if (c == "_01" || c == "_02" || c == "_06" || c == "_08")
                                     {
                                         sublocation = CheckOffset.Listing(location, address);
 
