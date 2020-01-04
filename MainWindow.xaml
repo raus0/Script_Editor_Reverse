@@ -10,20 +10,30 @@
         PreviewDragOver="Window_PreviewDragOver"
         Title="Script Editor Reverse" Height="450" Width="600" WindowStartupLocation="CenterScreen">
 
+    <Window.InputBindings>
+        <KeyBinding Command="ApplicationCommands.Save" Key="S" Modifiers="Control" />
+        <KeyBinding Command="ApplicationCommands.Close" Key="E" Modifiers="Control" />
+    </Window.InputBindings>
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Open"
                   Executed="OpenCmdExecuted"
                   CanExecute="OpenCmdCanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Save"
+                  Executed="menuiteSaveAs_Click" />
+        <CommandBinding Command="ApplicationCommands.Close"
+                  Executed="menuitemExit_Click" />
     </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="White">
             <MenuItem Header="File" Background="Transparent">
                 <MenuItem Command="Open" />
                 <MenuItem Name="menuitemSaveAs" Header="保存"
-                          Click="menuiteSaveAs_Click"/>
+                          Click="menuiteSaveAs_Click"
+                          InputGestureText="Ctrl+S" />
                 <Separator />
                 <MenuItem Name="menuitemExit" Header="終了"
-                Click="menuitemExit_Click"/>
+                Click="menuitemExit_Click"
+                InputGestureText="Ctrl+E" />
             </MenuItem>
             <MenuItem Header="Edit">
                 <MenuItem Command="Cut" />
