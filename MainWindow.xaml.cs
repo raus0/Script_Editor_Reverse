@@ -15,6 +15,7 @@ namespace Script_Editor_Reverse
     {
         string selectedROMPath;
         int location;
+        int decompileMode;
 
         public MainWindow()
         {
@@ -42,6 +43,8 @@ namespace Script_Editor_Reverse
                 else if (i == 2)
                 {
                     txtDecompileOffset.Text = string.Format("0x{1}", i, Commands[i]);
+
+                    decompileMode = 1;
 
                     string romCode = GetROMCode();
 
@@ -75,6 +78,8 @@ namespace Script_Editor_Reverse
 
         private void Decompile(object sender, RoutedEventArgs e)
         {
+            decompileMode = 1;
+
             string msgLine = "";
             string movementLine = "";
 
@@ -108,6 +113,8 @@ namespace Script_Editor_Reverse
 
         private void BIN(object sender, RoutedEventArgs e)
         {
+            decompileMode = 2;
+
             string msgLine = "";
             string movementLine = "";
 
@@ -141,6 +148,8 @@ namespace Script_Editor_Reverse
 
         private void macro(object sender, RoutedEventArgs e)
         {
+            decompileMode = 3;
+
             bool equ = false;
 
             string msgLine = "";
@@ -192,6 +201,26 @@ namespace Script_Editor_Reverse
 
         private void Compile(object sender, RoutedEventArgs e)
         {
+            if (decompileMode == 3)
+            {
+                Assemble();
+            }
+            else if (decompileMode == 2)
+            {
+                MessageBox.Show("BIN形式のコンパイル機能は未実装です");
+            }
+            else if (decompileMode == 1)
+            {
+                MessageBox.Show("コマンド形式のコンパイル機能は未実装です");
+            }
+            else
+            {
+                Assemble();
+            }
+        }
+
+        private void Assemble()
+        {
             using (FileStream fs = File.Create(@"event.asm"))
             {
                 StreamWriter sw = new StreamWriter(fs);
@@ -214,27 +243,6 @@ namespace Script_Editor_Reverse
 
             if (File.Exists(@"event.bin"))
             {
-                /*using (FileStream fileStream = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
-                {
-                    //↓共有オプション(FileShare.ReadWrite)があるので不要？
-                    fileStream.Lock(0, fileStream.Length);
-                    fileStream.Unlock(0, fileStream.Length);
-
-                    //配列生成
-                    byte[] BIN = File.ReadAllBytes(@"event.bin");
-                    byte[] ROM = new byte[fileStream.Length];
-
-                    fileStream.Read(ROM, 0, ROM.Length);
-
-                    //配列操作
-                    location = CheckOffset.Listing(location, txtDecompileOffset.Text);
-
-                    Array.Copy(BIN, 0, ROM, location, BIN.Length);
-                    
-                    //ROMデータの末尾に書き込まれてしまう ファイルストリームを一度閉じて上書きオプション(FileMode.Create)で開き直す必要あり
-                    fileStream.Write(ROM, 0, ROM.Length);
-                }*/
-
                 FileStream fs1 = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
 
                 byte[] BIN = File.ReadAllBytes(@"event.bin");
