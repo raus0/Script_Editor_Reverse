@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using System.Diagnostics;
 using Microsoft.Win32;
 using MessageBox = System.Windows.MessageBox;
 using System.Collections.Generic;
@@ -36,6 +37,7 @@ namespace Script_Editor_Reverse
                     Decompilebtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
                     macrobtn.IsEnabled = true;
+                    Compilebtn.IsEnabled = true;
                 }
                 else if (i == 2)
                 {
@@ -190,16 +192,70 @@ namespace Script_Editor_Reverse
 
         private void Compile(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Compile！");
+            using (FileStream fs = File.Create(@"event.asm"))
+            {
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(textEditor.Text);
+                sw.Close();
+            }
 
-            FileStream filestream = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
-            filestream.Lock(0, filestream.Length);
-            filestream.Unlock(0, filestream.Length);
+            ProcessStartInfo psInfo = new ProcessStartInfo();
+            psInfo.FileName = @"thumb.bat";
+            psInfo.Arguments = @"event.asm";
+            psInfo.CreateNoWindow = true;
+            psInfo.UseShellExecute = false;
+            psInfo.RedirectStandardOutput = true;
+            psInfo.RedirectStandardError = true;
+            Process p = Process.Start(psInfo);
+            string output = p.StandardOutput.ReadToEnd();
+            string eOut = p.StandardError.ReadToEnd();
 
-            //ここでファイルの書き込み処理を行う
-            //書き込みにはFilestream.Write関数を使用すること
+            File.Delete(@"event.asm");
 
-            filestream.Close();
+            if (File.Exists(@"event.bin"))
+            {
+                /*using (FileStream fileStream = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                {
+                    //↓共有オプション(FileShare.ReadWrite)があるので不要？
+                    fileStream.Lock(0, fileStream.Length);
+                    fileStream.Unlock(0, fileStream.Length);
+
+                    //配列生成
+                    byte[] BIN = File.ReadAllBytes(@"event.bin");
+                    byte[] ROM = new byte[fileStream.Length];
+
+                    fileStream.Read(ROM, 0, ROM.Length);
+
+                    //配列操作
+                    location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+                    Array.Copy(BIN, 0, ROM, location, BIN.Length);
+                    
+                    //ROMデータの末尾に書き込まれてしまう ファイルストリームを一度閉じて上書きオプション(FileMode.Create)で開き直す必要あり
+                    fileStream.Write(ROM, 0, ROM.Length);
+                }*/
+
+                FileStream fs1 = new FileStream(selectedROMPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+
+                byte[] BIN = File.ReadAllBytes(@"event.bin");
+                byte[] ROM = new byte[fs1.Length];
+
+                fs1.Read(ROM, 0, ROM.Length);
+                fs1.Close();
+
+                location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+
+                Array.Copy(BIN, 0, ROM, location, BIN.Length);
+
+                FileStream fs2 = new FileStream(selectedROMPath, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite);
+
+                fs2.Write(ROM, 0, ROM.Length);
+                fs2.Close();
+
+                File.Delete(@"event.bin");
+            }
+
+            MessageBox.Show(output + eOut);
         }
 
         void OpenCmdExecuted(object target, ExecutedRoutedEventArgs e)
@@ -219,6 +275,7 @@ namespace Script_Editor_Reverse
                     Decompilebtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
                     macrobtn.IsEnabled = true;
+                    Compilebtn.IsEnabled = true;
                     string romCode = GetROMCode();
                     textEditor.Text = "ROM Infomation : " + romCode;
                 }
@@ -266,6 +323,7 @@ namespace Script_Editor_Reverse
                 Decompilebtn.IsEnabled = true;
                 BINbtn.IsEnabled = true;
                 macrobtn.IsEnabled = true;
+                Compilebtn.IsEnabled = true;
                 string romCode = GetROMCode();
                 textEditor.Text = "ROM Infomation : " + romCode;
             }
