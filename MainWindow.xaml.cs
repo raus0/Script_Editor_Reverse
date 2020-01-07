@@ -37,6 +37,7 @@ namespace Script_Editor_Reverse
                     FilePath.Text = selectedROMPath;
                     txtDecompileOffset.IsEnabled = true;
                     Decompilebtn.IsEnabled = true;
+                    CMDbtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
                     macrobtn.IsEnabled = true;
                     Compilebtn.IsEnabled = true;
@@ -295,6 +296,7 @@ namespace Script_Editor_Reverse
                     FilePath.Text = selectedROMPath;
                     txtDecompileOffset.IsEnabled = true;
                     Decompilebtn.IsEnabled = true;
+                    CMDbtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
                     macrobtn.IsEnabled = true;
                     Compilebtn.IsEnabled = true;
@@ -343,6 +345,7 @@ namespace Script_Editor_Reverse
                 FilePath.Text = selectedROMPath;
                 txtDecompileOffset.IsEnabled = true;
                 Decompilebtn.IsEnabled = true;
+                CMDbtn.IsEnabled = true;
                 BINbtn.IsEnabled = true;
                 macrobtn.IsEnabled = true;
                 Compilebtn.IsEnabled = true;

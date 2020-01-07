@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Drop="Window_Drop"
         PreviewDragOver="Window_PreviewDragOver"
-        Title="Script Editor Reverse" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+        Title="Script Editor Reverse" Height="450" Width="650" WindowStartupLocation="CenterScreen">
 
     <Window.InputBindings>
         <KeyBinding Command="ApplicationCommands.Save" Key="S" Modifiers="Control" />
@@ -70,8 +70,9 @@
             <Button x:Name="Compilebtn" Click="Compile" Content="Compile" HorizontalAlignment="Left" Margin="213,6.04,0,0" VerticalAlignment="Top" Width="75" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" Background="White" IsEnabled="False"/>
             <TextBox x:Name="txtDecompileOffset" HorizontalAlignment="Left" Height="19.96" Margin="293,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="0x000000" TextDecorations="{x:Null}" IsEnabled="False"/>
             <Button x:Name="Decompilebtn" Click="Decompile" Content="Decompile" HorizontalAlignment="Left" Margin="373,6.04,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
-            <Button x:Name="BINbtn" Click="BIN" Content="BIN" HorizontalAlignment="Left" Margin="453,6.04,0,0" VerticalAlignment="Top" Width="50.087" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
-            <Button x:Name="macrobtn" Click="macro" Content="macro" HorizontalAlignment="Left" Margin="508.087,6.04,0,0" VerticalAlignment="Top" Width="50.087" RenderTransformOrigin="0.194,0" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
+            <Button x:Name="BINbtn" Click="BIN" Content="BIN" HorizontalAlignment="Left" Margin="508.087,6.04,0,0" VerticalAlignment="Top" Width="50.087" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
+            <Button x:Name="macrobtn" Click="macro" Content="macro" HorizontalAlignment="Left" Margin="563.174,6.04,0,0" VerticalAlignment="Top" Width="50.087" RenderTransformOrigin="0.194,0" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
+            <Button x:Name="CMDbtn" Click="Decompile" Content="CMD" HorizontalAlignment="Left" Margin="453,6.04,0,0" VerticalAlignment="Top" Width="50.087" RenderTransformOrigin="0.194,0" Background="White" BorderBrush="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}" IsEnabled="False"/>
         </Grid>
     </DockPanel>
 </Window>
