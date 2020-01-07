@@ -127,7 +127,6 @@ namespace Script_Editor_Reverse
             List<int> movement = new List<int>();
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
-            cmplocation = location;
 
             textEditor.Text = string.Join(Environment.NewLine, DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg, movement));
 
