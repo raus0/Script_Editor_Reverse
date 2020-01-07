@@ -15,6 +15,7 @@ namespace Script_Editor_Reverse
     {
         string selectedROMPath;
         int location;
+        int cmplocation;
         int decompileMode;
 
         public MainWindow()
@@ -126,6 +127,7 @@ namespace Script_Editor_Reverse
             List<int> movement = new List<int>();
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+            cmplocation = location;
 
             textEditor.Text = string.Join(Environment.NewLine, DecompileBIN.DecompileCommand(selectedROMPath, location, list, msg, movement));
 
@@ -163,6 +165,7 @@ namespace Script_Editor_Reverse
             List<int> movement = new List<int>();
 
             location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+            cmplocation = location;
 
             textEditor.Text = string.Join(Environment.NewLine, DecompileMacro.DecompileCommand(selectedROMPath, location, list, msg, movement, equ));
 
@@ -203,18 +206,32 @@ namespace Script_Editor_Reverse
         {
             if (decompileMode == 3)
             {
-                Assemble();
+                location = CheckOffset.Listing(location, txtDecompileOffset.Text);
+                if (cmplocation == location)
+                {
+                    MessageBoxResult result = MessageBox.Show("オフセット未変更です。実行しますか？", "上書き注意", MessageBoxButton.YesNoCancel);
+
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        Assemble();
+                    }
+                }
+                else
+                {
+                    Assemble();
+                }
             }
             else if (decompileMode == 2)
             {
-                MessageBox.Show("BIN形式のコンパイル機能は未実装です");
+                MessageBox.Show("BIN形式のコンパイル機能は未実装です。");
             }
             else if (decompileMode == 1)
             {
-                MessageBox.Show("コマンド形式のコンパイル機能は未実装です");
+                MessageBox.Show("コマンド形式のコンパイル機能は未実装です。");
             }
             else
             {
+                location = CheckOffset.Listing(location, txtDecompileOffset.Text);
                 Assemble();
             }
         }
@@ -250,8 +267,6 @@ namespace Script_Editor_Reverse
 
                 fs1.Read(ROM, 0, ROM.Length);
                 fs1.Close();
-
-                location = CheckOffset.Listing(location, txtDecompileOffset.Text);
 
                 Array.Copy(BIN, 0, ROM, location, BIN.Length);
 
