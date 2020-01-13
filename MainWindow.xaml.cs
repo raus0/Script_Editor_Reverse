@@ -39,7 +39,7 @@ namespace Script_Editor_Reverse
                     Decompilebtn.IsEnabled = true;
                     CMDbtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
-                    macrobtn.IsEnabled = true;
+                    ASMbtn.IsEnabled = true;
                     Compilebtn.IsEnabled = true;
                 }
                 else if (i == 2)
@@ -148,7 +148,7 @@ namespace Script_Editor_Reverse
             textEditor.Text += msgLine + movementLine;
         }
 
-        private void macro(object sender, RoutedEventArgs e)
+        private void ASM(object sender, RoutedEventArgs e)
         {
             decompileMode = 3;
 
@@ -298,7 +298,7 @@ namespace Script_Editor_Reverse
                     Decompilebtn.IsEnabled = true;
                     CMDbtn.IsEnabled = true;
                     BINbtn.IsEnabled = true;
-                    macrobtn.IsEnabled = true;
+                    ASMbtn.IsEnabled = true;
                     Compilebtn.IsEnabled = true;
                     string romCode = GetROMCode();
                     textEditor.Text = "ROM Infomation : " + romCode;
@@ -347,7 +347,7 @@ namespace Script_Editor_Reverse
                 Decompilebtn.IsEnabled = true;
                 CMDbtn.IsEnabled = true;
                 BINbtn.IsEnabled = true;
-                macrobtn.IsEnabled = true;
+                ASMbtn.IsEnabled = true;
                 Compilebtn.IsEnabled = true;
                 string romCode = GetROMCode();
                 textEditor.Text = "ROM Infomation : " + romCode;
