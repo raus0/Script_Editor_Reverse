@@ -143,10 +143,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="run.png" />
+    <Resource Include="gear.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="gear.png" />
+    <Resource Include="run.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
