@@ -76,9 +76,15 @@
 
             <Button x:Name="Compilebtn" Click="Compile" HorizontalAlignment="Left" Margin="213,6.04,0,0" VerticalAlignment="Top" Width="35" Background="White" IsEnabled="False" Foreground="White" BorderBrush="#FFABADB3">
                 <Image Source="{StaticResource ImageSource1}" VerticalAlignment="Center" RenderTransformOrigin="3.841,-3.339" Height="16" />
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="実行"/>
+                </ToolTipService.ToolTip>
             </Button>
             <Button x:Name="Decompilebtn" Click="Decompile" HorizontalAlignment="Left" Margin="333,6.04,0,0" VerticalAlignment="Top" Width="35" Background="White" IsEnabled="False" Foreground="White" BorderBrush="#FFABADB3">
                 <Image Source="{StaticResource ImageSource2}" VerticalAlignment="Center" RenderTransformOrigin="3.841,-3.339" Height="16" />
+                <ToolTipService.ToolTip>
+                    <ToolTip Content="解析"/>
+                </ToolTipService.ToolTip>
             </Button>
             <TextBox x:Name="txtDecompileOffset" HorizontalAlignment="Left" Height="19.96" Margin="253,6.04,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Text="0x000000" TextDecorations="{x:Null}" IsEnabled="False"/>
             <Button x:Name="BINbtn" Click="BIN" Content="BIN" HorizontalAlignment="Left" Margin="428.087,6.04,0,0" VerticalAlignment="Top" Width="50.087" Background="White" IsEnabled="False" BorderBrush="#FFABADB3"/>
