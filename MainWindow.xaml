@@ -25,7 +25,7 @@
                   Executed="OpenCmdExecuted"
                   CanExecute="OpenCmdCanExecute"/>
         <CommandBinding Command="ApplicationCommands.Save"
-                  Executed="menuiteSaveAs_Click" />
+                  Executed="menuitemSaveAs_Click" />
         <CommandBinding Command="ApplicationCommands.Close"
                   Executed="menuitemExit_Click" />
     </Window.CommandBindings>
@@ -34,7 +34,7 @@
             <MenuItem Header="File" Background="Transparent">
                 <MenuItem Command="Open" />
                 <MenuItem Name="menuitemSaveAs" Header="保存"
-                          Click="menuiteSaveAs_Click"
+                          Click="menuitemSaveAs_Click"
                           InputGestureText="Ctrl+S" />
                 <Separator />
                 <MenuItem Name="menuitemExit" Header="終了"

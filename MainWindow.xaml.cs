@@ -315,7 +315,7 @@ namespace Script_Editor_Reverse
             }
         }
 
-        private void menuiteSaveAs_Click(object sender, RoutedEventArgs e)
+        private void menuitemSaveAs_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.InitialDirectory = @"C:\users\desktop";
